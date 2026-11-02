@@ -33,7 +33,8 @@
       }
     };
   </script>
-  <!-- 5. Merkezi API İstemcisi & Veritabanı Köprüsü -->
+  <!-- 5. Merkezi API İstemcisi & Veritabanı Köprüsü (prompt.md Adım 1) -->
+  <script src="config.js"></script>
   <script src="assets/js/api.js"></script>
 
   <style>
@@ -830,6 +831,12 @@
        (Prompt Kural 1, 2, 3 - SweetAlert2 & Modern Community Standards)
        ======================================================================== -->
   <script>
+    // prompt.md ADIM 1: API BASE URL'NİN KESİN TANIMLANMASI VE KULLANIMI
+    // Canlı backend adresi (Not: Sonunda /api yoktur).
+    const API_BASE_URL = "https://saas-g-ncel-10-10-2026simdi-main.onrender.com";
+    window.API_BASE_URL = API_BASE_URL;
+    window.API_BASE = `${API_BASE_URL}/api`;
+
     // 0. XSS Koruması ve Kaçırma Fonksiyonu
     function escapeHtml(str) {
       if (str === null || str === undefined) return '';
@@ -1617,22 +1624,21 @@
         }
       }
 
-      // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 1)
+      // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 2 - Mutlak URL)
       if (!products || products.length === 0) {
-        const API_BASE_URL = (window.API_BASE_URL || window.API_BASE || (window.location.origin && window.location.origin.startsWith('http') ? window.location.origin + '/api' : 'http://localhost:5000/api')).replace(/\/+$/, '');
         const endpoints = [
-          `${API_BASE_URL}/store/products${queryString}`,
-          `${API_BASE_URL}/products${queryString}`,
-          `/api/store/products${queryString}`,
-          `/api/products${queryString}`
+          `${API_BASE_URL}/api/products${queryString}`,
+          `${API_BASE_URL}/api/store/products${queryString}`
         ];
 
         for (const ep of endpoints) {
           try {
+            console.log('[Store Fetch] İstek atılıyor:', ep);
             const resp = await fetch(ep, {
               headers: {
                 'Accept': 'application/json',
-                ...(localStorage.getItem('token') ? { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {})
+                ...(localStorage.getItem('token') ? { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {}),
+                ...(localStorage.getItem('tenantId') ? { 'X-Tenant-Id': localStorage.getItem('tenantId'), 'X-Tenant-Slug': localStorage.getItem('tenantId') } : {})
               }
             });
             if (resp.ok) {
@@ -1644,7 +1650,9 @@
                 break;
               }
             }
-          } catch (err) {}
+          } catch (err) {
+            console.warn('[Store Fetch Hatası]:', ep, err);
+          }
         }
       }
 
@@ -2469,10 +2477,9 @@
 
       try {
         let orderResult = null;
-        const API_BASE_URL = (window.API_BASE_URL || window.API_BASE || (window.location.origin && window.location.origin.startsWith('http') ? window.location.origin + '/api' : 'http://localhost:5000/api')).replace(/\/+$/, '');
-
-        // prompt.md KESİN EMİR (Adım 3):
+        // prompt.md KESİN EMİR (Adım 2 & 3):
         // Header kısmına KESİNLİKLE 'Authorization': 'Bearer ' + localStorage.getItem('token') ekle
+        // ve mutlak Render API adresine istek gönder
         const storedToken = localStorage.getItem('token') || rawToken;
         const requestHeaders = {
           'Content-Type': 'application/json',
@@ -2483,24 +2490,27 @@
         const tenantId = localStorage.getItem('tenantId');
         if (tenantId) {
           requestHeaders['X-Tenant-Id'] = tenantId;
+          requestHeaders['X-Tenant-Slug'] = tenantId;
         }
 
-        // 1. Canlı fetch ile POST ${API_BASE_URL}/store/orders isteği
+        // 1. Canlı fetch ile POST ${API_BASE_URL}/api/store/orders isteği
         try {
-          const resp = await fetch(`${API_BASE_URL}/store/orders`, {
+          console.log('[Checkout Fetch] İstek atılıyor:', `${API_BASE_URL}/api/store/orders`);
+          const resp = await fetch(`${API_BASE_URL}/api/store/orders`, {
             method: 'POST',
             headers: requestHeaders,
             body: JSON.stringify(orderPayload)
           });
           orderResult = await resp.json().catch(() => null);
         } catch (fetchErr) {
-          console.warn('[CHECKOUT] POST /store/orders hatası, fallback deneniyor:', fetchErr);
+          console.warn('[CHECKOUT] POST /api/store/orders hatası, fallback deneniyor:', fetchErr);
         }
 
-        // Fallback: POST ${API_BASE_URL}/orders
+        // Fallback: POST ${API_BASE_URL}/api/orders
         if (!orderResult || (!orderResult.success && !orderResult.id && !orderResult.data)) {
           try {
-            const resp2 = await fetch(`${API_BASE_URL}/orders`, {
+            console.log('[Checkout Fetch] Fallback isteği atılıyor:', `${API_BASE_URL}/api/orders`);
+            const resp2 = await fetch(`${API_BASE_URL}/api/orders`, {
               method: 'POST',
               headers: requestHeaders,
               body: JSON.stringify(orderPayload)

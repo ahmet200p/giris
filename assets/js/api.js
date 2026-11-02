@@ -1,23 +1,25 @@
 /**
  * Merkezi API İstemcisi & Headless Köprüsü (assets/js/api.js)
- * store.html ve diğer frontend'ler için backend ile tam entegrasyon sağlar.
+ * ADIM 1: API BASE URL'NİN KESİN TANIMLANMASI VE KULLANIMI
+ * Canlı backend adresi tanımlıdır (Not: Sonunda /api yoktur).
  */
+const API_BASE_URL = (typeof window !== 'undefined' && window.API_BASE_URL) || "https://saas-g-ncel-10-10-2026simdi-main.onrender.com";
+
+if (typeof window !== 'undefined') {
+  window.API_BASE_URL = API_BASE_URL;
+  window.API_BASE = `${API_BASE_URL}/api`;
+}
 
 (function () {
-  const origin = window.location.origin;
-  const isHttp = origin && (origin.startsWith('http://') || origin.startsWith('https://'));
-  
-  // API Taban Adresi: Sunucu üzerinden açıldıysa göreceli /api, dosya olarak açıldıysa localhost:5000/api
-  window.API_BASE_URL = window.API_BASE_URL || window.API_BASE || (isHttp ? (origin + '/api') : 'http://localhost:5000/api');
-  window.API_BASE = window.API_BASE_URL;
-
   /**
    * Merkezi apiFetch İstemcisi
-   * Otomatik Bearer token, JSON serileştirme ve hata yakalama içerir.
+   * Otomatik Bearer token, JSON serileştirme ve mutlak (absolute) URL kullanımı içerir.
+   * Konsolda https://saas-g-ncel... ile başlayan tam URL'ye istek atar.
    */
   window.apiFetch = async function (endpoint, options = {}) {
     const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-    const url = `${window.API_BASE}${cleanEndpoint}`;
+    const apiPath = cleanEndpoint.startsWith('/api') ? cleanEndpoint : `/api${cleanEndpoint}`;
+    const url = `${API_BASE_URL}${apiPath}`;
 
     const headers = {
       'Accept': 'application/json',
@@ -41,6 +43,7 @@
     const tenantId = localStorage.getItem('tenantId');
     if (tenantId) {
       headers['X-Tenant-Id'] = tenantId;
+      headers['X-Tenant-Slug'] = tenantId;
     }
 
     try {
@@ -62,7 +65,8 @@
           success: false,
           status: response.status,
           message: (data && data.message) || response.statusText,
-          errors: data && data.errors
+          errors: data && data.errors,
+          code: data && data.code
         };
       }
 
@@ -113,6 +117,5 @@
     sessionStorage.clear();
   };
 
-  console.log(`[Headless API Köprüsü Hazır] Bağlantı: ${window.API_BASE}`);
+  console.log(`[Headless API Köprüsü Hazır] Canlı URL: ${API_BASE_URL}/api`);
 })();
-

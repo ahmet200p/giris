@@ -1,0 +1,178 @@
+// Prisma Schema - Tek Cati, Cift Kapi Headless & RBAC Mimarisi
+// Desteklenen Roller: ADMIN, BAYI, MUSTERI
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  BAYI
+  MUSTERI
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  password    String
+  name        String
+  phone       String?
+  companyName String?  // Bayi veya Kurumsal B2B Musteri Unvani
+  taxNumber   String?  // Vergi No
+  taxOffice   String?  // Vergi Dairesi
+  city        String?  // Sehir / Lokasyon
+  address     String?  // Acik Adres
+  role        Role     @default(MUSTERI)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // BAYI ILISKISI: Sadece BAYI rolundeki kullanicilar urun (Product) ekleyebilir ve yonetebilir
+  products    Product[] @relation("BayiProducts")
+
+  // MUSTERI ILISKILERI: Sadece MUSTERI rolundeki kullanicilar siparis (Order) verir ve sepet (Cart) olusturur
+  orders      Order[]    @relation("MusteriOrders")
+  cart        Cart?      @relation("MusteriCart")
+  favorites   Favorite[] @relation("MusteriFavorites")
+
+  @@index([role])
+  @@index([email])
+}
+
+model Product {
+  id               String      @id @default(uuid())
+  name             String
+  oemCode          String      // OEM Parca Kodu (orn: 1K0 615 301 AA)
+  brand            String      // Uretici Markasi (orn: BREMBO, BOSCH, FERODO)
+  category         String      // Ana Kategori (orn: Fren Sistemi, Motor, Filtre)
+  subcategory      String?     // Alt Kategori (orn: On Fren Diski)
+  compatibleModels String?     // Uyumlu Arac Modelleri (orn: VW Golf VII / Passat B8)
+  price            Float       // Liste / Varsayilan Fiyat
+  discountedPrice  Float?      // Indirimli / Musteri B2B Fiyati
+  stock            Int         @default(0) // Mevcut Stok
+  imageUrl         String?
+  description      String?
+  specPill         String?     // Ozellik Rozeti (orn: Cap: 288 mm (Havalandirmali))
+  shippingText     String?     // Kargo Rozeti (orn: Ayni Gun Kargo)
+  isActive         Boolean     @default(true)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  // Bayi Sahiplik Iliskisi
+  bayiId           String
+  bayi             User        @relation("BayiProducts", fields: [bayiId], references: [id], onDelete: Cascade)
+
+  // Iliskili Siparis ve Sepet Kalemleri
+  orderItems       OrderItem[]
+  cartItems        CartItem[]
+  favorites        Favorite[]
+
+  @@index([bayiId])
+  @@index([oemCode])
+  @@index([brand])
+  @@index([category])
+}
+
+model Cart {
+  id        String     @id @default(uuid())
+  userId    String     @unique
+  user      User       @relation("MusteriCart", fields: [userId], references: [id], onDelete: Cascade)
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int      @default(1)
+  unitPrice Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([cartId, productId])
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  orderNumber     String      @unique // Benzersiz Siparis Kodu (orn: SP-20261102-001)
+  userId          String
+  user            User        @relation("MusteriOrders", fields: [userId], references: [id], onDelete: Restrict)
+  status          OrderStatus @default(PENDING)
+  subtotal        Float       // Ara Toplam (KDV Haric)
+  vatAmount       Float       // %20 KDV Tutari
+  grandTotal      Float       // Genel Toplam
+  shippingAddress String?
+  customerNotes   String?
+  paymentStatus   String      @default("COMPLETED") // B2B Kredi Karti / Odendi
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([status])
+}
+
+model OrderItem {
+  id         String   @id @default(uuid())
+  orderId    String
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId  String?
+  product    Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  name       String
+  oeNumber   String?
+  quantity   Int
+  unitPrice  Float
+  totalPrice Float
+  imageUrl   String?
+  sellerName String?  // Siparis anindaki Bayi / Magaza Adi
+  bayiId     String?  // Bayi ID izleme
+  createdAt  DateTime @default(now())
+
+  @@index([orderId])
+  @@index([productId])
+  @@index([bayiId])
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation("MusteriFavorites", fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String?  // Belirli bir kullanici icin (veya herkese acik)
+  title     String
+  message   String
+  type      String   @default("INFO") // STOCK_ALERT, PRICE_DROP, ORDER_STATUS, INFO
+  productId String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+

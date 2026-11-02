@@ -1,6 +1,7 @@
-# GÖREV: Canlı Backend Köprüsü Kurulumu
+# GÖREV: Müşteri Vitrini (B2B Store) Dinamik Veri ve Kasa Entegrasyonu
 
-Tüm frontend (Vitrin, Bayi ve Admin) klasörlerinin ortak kullanacağı kök dizine `api.js` (veya `config.js`) oluştur.
-1. Dosya içine şu URL'yi tanımla ve export et: 
-   `const API_BASE_URL = "https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api";`
-2. `store.html`, `bayi.html` ve `admin.html` dosyalarının `<head>` kısmına bu dosyayı ilk script olarak ekle. `localhost` içeren tüm eski fetch/axios isteklerini `API_BASE_URL` değişkeni ile değiştir.
+`store.html` ve bağlı JS dosyasını incele. Tasarımın (UI) HTML/CSS yapısına ve class'larına HİÇ DOKUNMADAN şu işlemleri yap:
+
+1. DİNAMİK LİSTELEME & FİLTRELEME: Sol menüdeki filtreleri (Marka, Kategori, Fiyat vb.) toplayan bir event listener yaz. Bu filtreleri query string yaparak `GET ${API_BASE_URL}/store/products` adresine istek at. Dönen verileri ekrandaki HTML şablonuna bas. Sol menüdeki adet sayılarını dönen veriye göre dinamik güncelle.
+2. SEPET VE TOKEN: Sepete ekleme işlemlerini LocalStorage'da tut. Üst menüdeki "Sepetim" butonuna sağdan açılan (Offcanvas) sepeti bağla.
+3. ÖDEME MODALI VE SİPARİŞ: Sepette "Siparişi Onayla"ya basılınca ekrana "Adres ve Kredi Kartı (Checkout)" modalı aç. Modal formunda `e.preventDefault()` kullan (hata mesajları ekranı kapatmasın). Başarılı form sonrası `POST ${API_BASE_URL}/store/orders` adresine isteği gönder. Header kısmına KESİNLİKLE `'Authorization': 'Bearer ' + localStorage.getItem('token')` ekle.

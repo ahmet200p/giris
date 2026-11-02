@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParçaPro B2B - Yönetici & Bayi Portalı (Kapı 1)</title>
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/api.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+  <!-- Üst Bilgi Çubuğu (Header) -->
+  <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-orange-500/20">
+          P
+        </div>
+        <div>
+          <h1 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+            ParçaPro <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold">KAPI 1: YÖNETİM & BAYİ PANELİ</span>
+          </h1>
+          <p class="text-xs text-slate-400">Tek Çatı, Çift Kapı Headless Mimarisi</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <a href="store.html" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 flex items-center gap-1.5 transition">
+          <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Müşteri Mağazasına Git (store.html)</span>
+        </a>
+        <div id="user-profile-bar" class="hidden flex items-center space-x-3 border-l border-slate-700 pl-3">
+          <div class="text-right">
+            <div id="user-name" class="text-xs font-bold text-white">Ahmet Bayi</div>
+            <div id="user-role-badge" class="text-[10px] font-semibold text-amber-400">BAYİ</div>
+          </div>
+          <button onclick="handleLogout()" class="p-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 transition" title="Çıkış Yap">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GİRİŞ EKRANI (LOGIN MODAL / CARD) -->
+  <div id="login-container" class="max-w-md mx-auto mt-16 p-6 bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl">
+    <div class="text-center mb-6">
+      <div class="inline-flex p-3 rounded-2xl bg-amber-500/10 text-amber-500 mb-3 border border-amber-500/20">
+        <i data-lucide="shield-check" class="w-8 h-8"></i>
+      </div>
+      <h2 class="text-xl font-bold text-white">Panel Girişi (Admin & Bayi)</h2>
+      <p class="text-xs text-slate-400 mt-1">Bu kapı yalnızca <b class="text-amber-400">ADMIN</b> ve <b class="text-amber-400">BAYİ</b> hesapları içindir. Müşteriler mağazadan giriş yapmalıdır.</p>
+    </div>
+
+    <!-- Hızlı Demo Butonları -->
+    <div class="grid grid-cols-2 gap-2 mb-4">
+      <button onclick="fillDemo('admin@parcapro.com', 'AdminPassword123!')" class="p-2 bg-slate-700/60 hover:bg-slate-700 rounded-lg text-xs text-left border border-slate-600/50">
+        <div class="font-bold text-amber-400">👑 Admin Hesabı</div>
+        <div class="text-[10px] text-slate-400">admin@parcapro.com</div>
+      </button>
+      <button onclick="fillDemo('bayi1@parcapro.com', 'BayiPassword123!')" class="p-2 bg-slate-700/60 hover:bg-slate-700 rounded-lg text-xs text-left border border-slate-600/50">
+        <div class="font-bold text-blue-400">🏪 Bayi Hesabı</div>
+        <div class="text-[10px] text-slate-400">bayi1@parcapro.com</div>
+      </button>
+    </div>
+
+    <form onsubmit="handlePanelLogin(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">E-Posta Adresi</label>
+        <input type="email" id="login-email" required placeholder="ornek@parcapro.com" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-500">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Şifre</label>
+        <input type="password" id="login-password" required placeholder="••••••••" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-amber-500">
+      </div>
+
+      <button type="submit" id="btn-login" class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold text-sm rounded-lg shadow-lg shadow-orange-500/25 transition">
+        Panele Giriş Yap (POST /api/auth/panel-login)
+      </button>
+    </form>
+
+    <div class="mt-6 p-3 bg-slate-900/60 rounded-xl border border-slate-800 text-[11px] text-slate-400 space-y-1">
+      <div class="font-semibold text-slate-300">🛡️ RBAC Çift Kapı Güvenlik Testi:</div>
+      <div>Müşteri hesabıyla (<code class="text-amber-400">musteri@parcapro.com</code>) buraya girmeyi denerseniz sistem <b class="text-red-400">403 Forbidden</b> ile girişi engeller!</div>
+    </div>
+  </div>
+
+  <!-- ANA DASHBOARD EKRANI (GİRİŞ YAPILDIĞINDA GÖRÜNÜR) -->
+  <main id="dashboard-container" class="hidden max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Üst KPI Kartları -->
+    <div id="kpi-grid" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <!-- Dinamik JS ile doldurulacak -->
+    </div>
+
+    <!-- Sekmeler (Tabs) -->
+    <div class="flex border-b border-slate-700 mb-6 space-x-4">
+      <button onclick="switchTab('products')" id="tab-btn-products" class="tab-btn pb-3 text-sm font-bold border-b-2 border-amber-500 text-amber-400">
+        📦 Ürün Yönetimi
+      </button>
+      <button onclick="switchTab('orders')" id="tab-btn-orders" class="tab-btn pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200">
+        📑 Siparişler
+      </button>
+      <button onclick="switchTab('users')" id="tab-btn-users" class="tab-btn pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 hidden">
+        👥 Kullanıcılar & Roller (ADMIN)
+      </button>
+    </div>
+
+    <!-- SEKME 1: ÜRÜNLER -->
+    <div id="tab-content-products" class="tab-content">
+      <div class="flex justify-between items-center mb-4">
+        <div>
+          <h3 class="text-lg font-bold text-white" id="products-heading">Ürün Kataloğu</h3>
+          <p class="text-xs text-slate-400">Mevcut stoklar ve fiyat yönetimi</p>
+        </div>
+        <button onclick="openNewProductModal()" id="btn-add-product" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Yeni Ürün Ekle</span>
+        </button>
+      </div>
+
+      <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+        <table class="w-full text-left text-xs text-slate-300">
+          <thead class="bg-slate-900/60 text-slate-400 text-[11px] uppercase border-b border-slate-700">
+            <tr>
+              <th class="p-3">Ürün Adı</th>
+              <th class="p-3">OEM Kodu</th>
+              <th class="p-3">Marka & Kategori</th>
+              <th class="p-3">Fiyat</th>
+              <th class="p-3">Mevcut Stok</th>
+              <th class="p-3">Satıcı / Bayi</th>
+              <th class="p-3 text-right">Hızlı Stok / İşlem</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body" class="divide-y divide-slate-700/60">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SEKME 2: SİPARİŞLER -->
+    <div id="tab-content-orders" class="tab-content hidden">
+      <div class="mb-4">
+        <h3 class="text-lg font-bold text-white">Sipariş Akışı</h3>
+        <p class="text-xs text-slate-400">Müşterilerden gelen siparişler ve teslimat durumları</p>
+      </div>
+      <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+        <table class="w-full text-left text-xs text-slate-300">
+          <thead class="bg-slate-900/60 text-slate-400 text-[11px] uppercase border-b border-slate-700">
+            <tr>
+              <th class="p-3">Sipariş No</th>
+              <th class="p-3">Müşteri</th>
+              <th class="p-3">Tarih</th>
+              <th class="p-3">Toplam Tutar</th>
+              <th class="p-3">Durum</th>
+              <th class="p-3 text-right">Durum Güncelle</th>
+            </tr>
+          </thead>
+          <tbody id="orders-table-body" class="divide-y divide-slate-700/60">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SEKME 3: KULLANICILAR & ROLLER (SADECE ADMIN) -->
+    <div id="tab-content-users" class="tab-content hidden">
+      <div class="mb-4">
+        <h3 class="text-lg font-bold text-white">Sistem Kullanıcıları & RBAC Rol Yönetimi</h3>
+        <p class="text-xs text-slate-400">Kullanıcıların ADMIN, BAYI veya MUSTERI yetkilerini anlık olarak değiştirin</p>
+      </div>
+      <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+        <table class="w-full text-left text-xs text-slate-300">
+          <thead class="bg-slate-900/60 text-slate-400 text-[11px] uppercase border-b border-slate-700">
+            <tr>
+              <th class="p-3">Kullanıcı Adı</th>
+              <th class="p-3">E-Posta</th>
+              <th class="p-3">Firma</th>
+              <th class="p-3">Mevcut Rol</th>
+              <th class="p-3">Durum</th>
+              <th class="p-3 text-right">Rol Değiştir (RBAC)</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body" class="divide-y divide-slate-700/60">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentUser = null;
+
+    function fillDemo(email, pass) {
+      document.getElementById('login-email').value = email;
+      document.getElementById('login-password').value = pass;
+    }
+
+    async function handlePanelLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      const res = await window.panelLogin(email, password);
+
+      if (res && res.success && res.data) {
+        currentUser = res.data.user;
+        Swal.fire({
+          icon: 'success',
+          title: 'Giriş Başarılı',
+          text: `${currentUser.role} paneline hoş geldiniz.`,
+          timer: 1500,
+          showConfirmButton: false
+        });
+        showDashboard();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Giriş Engellendi (403/401)',
+          text: res.message || 'Yetkilendirme hatası.'
+        });
+      }
+    }
+
+    function handleLogout() {
+      window.logout();
+      currentUser = null;
+      document.getElementById('login-container').classList.remove('hidden');
+      document.getElementById('dashboard-container').classList.add('hidden');
+      document.getElementById('user-profile-bar').classList.add('hidden');
+    }
+
+    async function showDashboard() {
+      document.getElementById('login-container').classList.add('hidden');
+      document.getElementById('dashboard-container').classList.remove('hidden');
+      document.getElementById('user-profile-bar').classList.remove('hidden');
+
+      document.getElementById('user-name').textContent = currentUser.name || currentUser.companyName;
+      document.getElementById('user-role-badge').textContent = currentUser.role;
+
+      if (currentUser.role === 'ADMIN') {
+        document.getElementById('tab-btn-users').classList.remove('hidden');
+        await loadAdminDashboard();
+      } else {
+        document.getElementById('tab-btn-users').classList.add('hidden');
+        await loadBayiDashboard();
+      }
+
+      lucide.createIcons();
+    }
+
+    // BAYI DASHBOARD
+    async function loadBayiDashboard() {
+      // 1. KPI
+      const statsRes = await window.apiFetch('/bayi/stats');
+      const stats = (statsRes && statsRes.data) || { totalProducts: 0, lowStockProducts: 0, totalSoldUnits: 0, totalEarnings: 0 };
+
+      document.getElementById('kpi-grid').innerHTML = `
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Toplam Ürünüm</div>
+          <div class="text-2xl font-bold text-white mt-1">${stats.totalProducts}</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Kritik Stok (<5)</div>
+          <div class="text-2xl font-bold text-amber-400 mt-1">${stats.lowStockProducts}</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Satılan Parça Adedi</div>
+          <div class="text-2xl font-bold text-blue-400 mt-1">${stats.totalSoldUnits}</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Toplam Bayi Cirom</div>
+          <div class="text-2xl font-bold text-emerald-400 mt-1">₺${stats.totalEarnings.toLocaleString('tr-TR')}</div>
+        </div>
+      `;
+
+      // 2. Ürünler
+      const prodsRes = await window.apiFetch('/bayi/products');
+      const products = (prodsRes && prodsRes.data) || [];
+      renderProductsTable(products, true);
+
+      // 3. Siparişler
+      const ordersRes = await window.apiFetch('/bayi/orders');
+      const orders = (ordersRes && ordersRes.data) || [];
+      renderOrdersTable(orders, false);
+    }
+
+    // ADMIN DASHBOARD
+    async function loadAdminDashboard() {
+      // 1. KPI
+      const statsRes = await window.apiFetch('/admin/stats');
+      const stats = (statsRes && statsRes.data) || { users: {}, products: {}, orders: {} };
+
+      document.getElementById('kpi-grid').innerHTML = `
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Toplam Kullanıcı</div>
+          <div class="text-2xl font-bold text-white mt-1">${stats.users.total || 0}</div>
+          <div class="text-[10px] text-slate-400 mt-1">${stats.users.bayis || 0} Bayi | ${stats.users.musteris || 0} Müşteri</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Sistemdeki Tüm Ürünler</div>
+          <div class="text-2xl font-bold text-blue-400 mt-1">${stats.products.total || 0}</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Toplam Sipariş</div>
+          <div class="text-2xl font-bold text-amber-400 mt-1">${stats.orders.total || 0}</div>
+        </div>
+        <div class="p-4 bg-slate-800 rounded-xl border border-slate-700">
+          <div class="text-xs text-slate-400 font-medium">Platform Cirosu</div>
+          <div class="text-2xl font-bold text-emerald-400 mt-1">₺${(stats.orders.totalRevenue || 0).toLocaleString('tr-TR')}</div>
+        </div>
+      `;
+
+      // 2. Ürünler
+      const prodsRes = await window.apiFetch('/admin/products');
+      const products = (prodsRes && prodsRes.data) || [];
+      renderProductsTable(products, false);
+
+      // 3. Siparişler
+      const ordersRes = await window.apiFetch('/admin/orders');
+      const orders = (ordersRes && ordersRes.data) || [];
+      renderOrdersTable(orders, true);
+
+      // 4. Kullanıcılar
+      const usersRes = await window.apiFetch('/admin/users');
+      const users = (usersRes && usersRes.data) || [];
+      renderUsersTable(users);
+    }
+
+    function renderProductsTable(products, isBayi) {
+      const tbody = document.getElementById('products-table-body');
+      if (products.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-500">Kayıtlı ürün bulunamadı.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = products.map(p => `
+        <tr class="hover:bg-slate-700/30 transition">
+          <td class="p-3 font-semibold text-white">${p.name}</td>
+          <td class="p-3 font-mono text-amber-400">${p.oemCode}</td>
+          <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-700 text-slate-300 font-medium">${p.brand}</span> <span class="text-slate-400">${p.category}</span></td>
+          <td class="p-3 font-bold text-emerald-400">₺${(p.discountedPrice || p.price).toLocaleString('tr-TR')}</td>
+          <td class="p-3">
+            <span class="px-2 py-0.5 rounded text-xs font-bold ${p.stock <= 5 ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'}">
+              ${p.stock} Adet
+            </span>
+          </td>
+          <td class="p-3 text-slate-400">${(p.bayi && p.bayi.companyName) || 'Kendi Ürünüm'}</td>
+          <td class="p-3 text-right">
+            ${isBayi ? `
+              <button onclick="handleQuickStockUpdate('${p.id}', ${p.stock})" class="px-2 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded text-[11px] font-bold">
+                ⚡ Stok Güncelle
+              </button>
+            ` : `
+              <button onclick="handleAdminDeleteProduct('${p.id}')" class="px-2 py-1 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded text-[11px] font-bold">
+                🗑 Kaldır
+              </button>
+            `}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderOrdersTable(orders, isAdmin) {
+      const tbody = document.getElementById('orders-table-body');
+      if (orders.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-slate-500">Henüz sipariş yok.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = orders.map(o => `
+        <tr class="hover:bg-slate-700/30 transition">
+          <td class="p-3 font-mono font-bold text-white">${o.orderNumber}</td>
+          <td class="p-3 text-slate-300">${(o.user && o.user.name) || 'Müşteri'}</td>
+          <td class="p-3 text-slate-400">${new Date(o.createdAt).toLocaleDateString('tr-TR')}</td>
+          <td class="p-3 font-bold text-emerald-400">₺${o.grandTotal.toLocaleString('tr-TR')}</td>
+          <td class="p-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${o.status === 'CONFIRMED' ? 'bg-blue-500/20 text-blue-400' : (o.status === 'SHIPPED' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400')}">
+              ${o.status}
+            </span>
+          </td>
+          <td class="p-3 text-right">
+            <select onchange="updateOrderStatus('${o.id}', this.value, ${isAdmin})" class="bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[11px] text-white">
+              <option value="PENDING" ${o.status === 'PENDING' ? 'selected' : ''}>PENDING</option>
+              <option value="CONFIRMED" ${o.status === 'CONFIRMED' ? 'selected' : ''}>CONFIRMED</option>
+              <option value="PREPARING" ${o.status === 'PREPARING' ? 'selected' : ''}>PREPARING</option>
+              <option value="SHIPPED" ${o.status === 'SHIPPED' ? 'selected' : ''}>SHIPPED</option>
+              <option value="DELIVERED" ${o.status === 'DELIVERED' ? 'selected' : ''}>DELIVERED</option>
+              <option value="CANCELLED" ${o.status === 'CANCELLED' ? 'selected' : ''}>CANCELLED</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderUsersTable(users) {
+      const tbody = document.getElementById('users-table-body');
+      tbody.innerHTML = users.map(u => `
+        <tr class="hover:bg-slate-700/30 transition">
+          <td class="p-3 font-semibold text-white">${u.name}</td>
+          <td class="p-3 text-slate-400">${u.email}</td>
+          <td class="p-3 text-slate-300">${u.companyName || '-'}</td>
+          <td class="p-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${u.role === 'ADMIN' ? 'bg-purple-500/20 text-purple-400' : (u.role === 'BAYI' ? 'bg-blue-500/20 text-blue-400' : 'bg-emerald-500/20 text-emerald-400')}">
+              ${u.role}
+            </span>
+          </td>
+          <td class="p-3">${u.isActive ? '<span class="text-emerald-400 font-bold">Aktif</span>' : '<span class="text-red-400 font-bold">Pasif</span>'}</td>
+          <td class="p-3 text-right">
+            <select onchange="changeUserRole('${u.id}', this.value)" class="bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[11px] text-white">
+              <option value="ADMIN" ${u.role === 'ADMIN' ? 'selected' : ''}>ADMIN</option>
+              <option value="BAYI" ${u.role === 'BAYI' ? 'selected' : ''}>BAYI</option>
+              <option value="MUSTERI" ${u.role === 'MUSTERI' ? 'selected' : ''}>MUSTERI</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function handleQuickStockUpdate(id, current) {
+      const { value: newStock } = await Swal.fire({
+        title: 'Hızlı Stok Güncelle (PATCH /api/bayi/products/:id/stock)',
+        input: 'number',
+        inputLabel: 'Yeni Stok Adedi',
+        inputValue: current,
+        showCancelButton: true
+      });
+      if (newStock !== undefined && newStock !== null) {
+        const res = await window.apiFetch(`/bayi/products/${id}/stock`, {
+          method: 'PATCH',
+          body: { stock: parseInt(newStock, 10) }
+        });
+        if (res && res.success) {
+          Swal.fire('Başarılı', 'Stok güncellendi', 'success');
+          loadBayiDashboard();
+        } else {
+          Swal.fire('Hata', res.message || 'Hata oluştu', 'error');
+        }
+      }
+    }
+
+    async function updateOrderStatus(orderId, status, isAdmin) {
+      const endpoint = isAdmin ? `/admin/orders/${orderId}/status` : `/bayi/orders/${orderId}/status`;
+      const res = await window.apiFetch(endpoint, {
+        method: 'PATCH',
+        body: { status }
+      });
+      if (res && res.success) {
+        Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: 'Sipariş durumu güncellendi', timer: 1500, showConfirmButton: false });
+      }
+    }
+
+    async function changeUserRole(userId, newRole) {
+      const res = await window.apiFetch(`/admin/users/${userId}/role`, {
+        method: 'PATCH',
+        body: { role: newRole }
+      });
+      if (res && res.success) {
+        Swal.fire('Başarılı', `Kullanıcı rolü ${newRole} olarak güncellendi.`, 'success');
+        loadAdminDashboard();
+      } else {
+        Swal.fire('Hata', res.message || 'Yetki hatası', 'error');
+      }
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('border-amber-500', 'text-amber-400');
+        b.classList.add('border-transparent', 'text-slate-400');
+      });
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+
+      document.getElementById(`tab-btn-${tab}`).classList.add('border-amber-500', 'text-amber-400');
+      document.getElementById(`tab-btn-${tab}`).classList.remove('border-transparent', 'text-slate-400');
+      document.getElementById(`tab-content-${tab}`).classList.remove('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
+

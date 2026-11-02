@@ -8,7 +8,8 @@
   const isHttp = origin && (origin.startsWith('http://') || origin.startsWith('https://'));
   
   // API Taban Adresi: Sunucu üzerinden açıldıysa göreceli /api, dosya olarak açıldıysa localhost:5000/api
-  window.API_BASE = window.API_BASE || (isHttp ? (origin + '/api') : 'http://localhost:5000/api');
+  window.API_BASE_URL = window.API_BASE_URL || window.API_BASE || (isHttp ? (origin + '/api') : 'http://localhost:5000/api');
+  window.API_BASE = window.API_BASE_URL;
 
   /**
    * Merkezi apiFetch İstemcisi

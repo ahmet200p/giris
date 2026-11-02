@@ -8,7 +8,7 @@ Bu proje, **Admin**, **Bayi** ve **Müşteri (B2B Alıcı)** aktörlerini birbir
 
 - **Tek Çatı:** Tek bir merkezi Express + Prisma backend servisi (`server.js`).
 - **Çift Kapı:**
-  - **Kapı 1 (Panel Girişi):** Admin ve Bayilerin giriş yaptığı `POST /api/auth/panel-login`.
+  - **Kapı 1 (Panel Girişi):** Admin ve Bayilerin giriş yaptığı `panel.html` ve `POST /api/auth/panel-login`.
   - **Kapı 2 (Mağaza Girişi):** B2B müşterilerin `store.html` üzerinden giriş yaptığı `POST /api/auth/store-login`.
 - **RBAC Yetkilendirme:** `ADMIN`, `BAYI`, `MUSTERI` rolleri Prisma Enum ve JWT Token payload'ı ile korunur.
 - **Rota İzolasyonu:**

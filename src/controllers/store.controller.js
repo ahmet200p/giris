@@ -668,6 +668,28 @@ async function markNotificationsRead(req, res, next) {
   }
 }
 
+async function triggerNotification(req, res, next) {
+  try {
+    const { type = 'INFO', title = 'Sistem Bildirimi', message = '', productId } = req.body;
+    const userId = req.user ? req.user.id : null;
+
+    const notif = await prisma.notification.create({
+      data: {
+        userId,
+        type,
+        title,
+        message,
+        productId: productId || null,
+        isRead: false
+      }
+    });
+
+    return successResponse(res, notif, 'Bildirim tetiklendi.');
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   getProducts,
   getProductById,
@@ -681,6 +703,7 @@ module.exports = {
   getFavorites,
   toggleFavorite,
   getNotifications,
-  markNotificationsRead
+  markNotificationsRead,
+  triggerNotification
 };
 

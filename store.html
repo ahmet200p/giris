@@ -1617,14 +1617,14 @@
         }
       }
 
-      // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 2)
+      // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 1)
       if (!products || products.length === 0) {
-        const apiBase = (window.API_BASE || 'https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api').replace(/\/+$/, '');
+        const API_BASE_URL = (window.API_BASE_URL || window.API_BASE || (window.location.origin && window.location.origin.startsWith('http') ? window.location.origin + '/api' : 'http://localhost:5000/api')).replace(/\/+$/, '');
         const endpoints = [
-          `${apiBase}/products${queryString}`,
-          `${apiBase}/store/products${queryString}`,
-          `/api/products${queryString}`,
-          `/api/store/products${queryString}`
+          `${API_BASE_URL}/store/products${queryString}`,
+          `${API_BASE_URL}/products${queryString}`,
+          `/api/store/products${queryString}`,
+          `/api/products${queryString}`
         ];
 
         for (const ep of endpoints) {
@@ -2469,15 +2469,15 @@
 
       try {
         let orderResult = null;
-        const apiBase = (window.API_BASE || 'https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api').replace(/\/+$/, '');
+        const API_BASE_URL = (window.API_BASE_URL || window.API_BASE || (window.location.origin && window.location.origin.startsWith('http') ? window.location.origin + '/api' : 'http://localhost:5000/api')).replace(/\/+$/, '');
 
-        // prompt.md KESİN EMİR:
-        // Bu fetch isteğinin headers kısmına Token'ı KESİNLİKLE şu formatta ekle:
-        // 'Authorization': 'Bearer ' + localStorage.getItem('token') (Eğer token 'jwt' veya başka isimle kayıtlıysa onu kullan)
+        // prompt.md KESİN EMİR (Adım 3):
+        // Header kısmına KESİNLİKLE 'Authorization': 'Bearer ' + localStorage.getItem('token') ekle
+        const storedToken = localStorage.getItem('token') || rawToken;
         const requestHeaders = {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Authorization': 'Bearer ' + rawToken
+          'Authorization': 'Bearer ' + storedToken
         };
 
         const tenantId = localStorage.getItem('tenantId');
@@ -2485,30 +2485,28 @@
           requestHeaders['X-Tenant-Id'] = tenantId;
         }
 
-        // 1. Canlı fetch ile POST /api/orders isteği
+        // 1. Canlı fetch ile POST ${API_BASE_URL}/store/orders isteği
         try {
-          const resp = await fetch(`${apiBase}/orders`, {
+          const resp = await fetch(`${API_BASE_URL}/store/orders`, {
             method: 'POST',
             headers: requestHeaders,
             body: JSON.stringify(orderPayload)
           });
           orderResult = await resp.json().catch(() => null);
         } catch (fetchErr) {
-          console.warn('[CHECKOUT] Canlı fetch hatası, apiFetch fallback deneniyor:', fetchErr);
+          console.warn('[CHECKOUT] POST /store/orders hatası, fallback deneniyor:', fetchErr);
         }
 
-        // 2. Eğer fetch doğrudan yanıt alamadıysa veya yetki hatası dışı ağ kesintisi varsa apiFetch fallback
+        // Fallback: POST ${API_BASE_URL}/orders
         if (!orderResult || (!orderResult.success && !orderResult.id && !orderResult.data)) {
-          if (typeof window.apiFetch === 'function') {
-            const apiRes = await window.apiFetch('/orders', {
+          try {
+            const resp2 = await fetch(`${API_BASE_URL}/orders`, {
               method: 'POST',
               headers: requestHeaders,
-              body: orderPayload
+              body: JSON.stringify(orderPayload)
             });
-            if (apiRes && (apiRes.success || apiRes.id || apiRes.data)) {
-              orderResult = apiRes;
-            }
-          }
+            orderResult = await resp2.json().catch(() => null);
+          } catch (e) {}
         }
 
         if (orderResult && (orderResult.success || orderResult.id || orderResult.data)) {

@@ -60,5 +60,6 @@ router.get('/favorites', optionalToken, storeController.getFavorites);
 router.post('/favorites', optionalToken, storeController.toggleFavorite);
 router.get('/notifications', optionalToken, storeController.getNotifications);
 router.post('/notifications/read', optionalToken, storeController.markNotificationsRead);
+router.post('/notifications/trigger', optionalToken, storeController.triggerNotification);
 
 module.exports = router;

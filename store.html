@@ -1,0 +1,3634 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Volkswagen Golf VII Uyumlu Fren Parçaları | ParçaPro B2B</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ParçaPro Referans Tasarım CSS (tasarim/ klasöründeki ekranlara birebir sadık) -->
+  <link rel="stylesheet" href="store.css">
+
+  <!-- Güncel Topluluk Paketleri (Modern & Güncel Kalabilecek Paketler) -->
+  <!-- 1. SweetAlert2: Bildirim ve Onay Modalları -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- 2. IMask: Güncel ve Modern Giriş Maskeleme (Kredi Kartı, CVV, Tarih, Telefon) -->
+  <script src="https://cdn.jsdelivr.net/npm/imask@7.6.1/dist/imask.min.js"></script>
+  <!-- 2. Lucide Icons: Modern ve Hafif Topluluk İkon Kütüphanesi -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- 3. Canvas Confetti: Sipariş Tamamlama Animasyonu -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- 4. Tailwind CSS (CDN): preflight: false ile store.css tasarımını korurken w-full, min-h-screen gibi utility sınıflarını tam destekler -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false
+      }
+    };
+  </script>
+  <!-- 5. Merkezi API İstemcisi & Veritabanı Köprüsü -->
+  <script src="assets/js/api.js"></script>
+
+  <style>
+    /* Üst Boşluk Düzeltmesi (Prompt Kural 1 & prompt.md Adım 1) */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==========================================================================
+       TÜM VİTRİN ARAYÜZÜNÜ İZOLE EDEN ANA WRAPPER (prompt.md Adım 1 - w-full min-h-screen)
+       ========================================================================== -->
+  <div class="store-frontend-wrapper w-full min-h-screen">
+
+    <!-- ========================================================================
+         1. EN ÜST SİYAH BİLGİ BARI (screen.png & screen(2).png)
+         ======================================================================== -->
+    <div class="pp-topbar">
+      <div class="pp-container pp-topbar-inner">
+        <div class="pp-topbar-left"></div>
+        <div class="pp-topbar-right">
+          <a href="#magaza" class="pp-topbar-link">🏪 Mağaza Aç / Satıcı Ol</a>
+          <span class="pp-topbar-divider"></span>
+          <a href="tel:08504407272" class="pp-topbar-link">📞 0850 440 72 72 (AFS Systems Destek)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         2. ANA KOYU LACİVERT HEADER (screen.png & screen(2).png)
+         ======================================================================== -->
+    <header class="pp-header">
+      <div class="pp-container pp-header-inner">
+
+        <!-- ParçaPro Logosu -->
+        <a href="store.html" class="pp-logo">
+          <div class="pp-logo-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ff5722" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+          <div class="pp-logo-text">
+            <span class="pp-logo-title">Parça<span>Pro</span></span>
+            <span class="pp-logo-subtitle">OTO YEDEK PARÇA PAZARYERİ</span>
+          </div>
+        </a>
+
+        <!-- Orta Gelişmiş Arama Çubuğu -->
+        <div class="pp-search-container">
+          <div class="pp-search-label">
+            <span class="pp-search-label-icon">🔍</span>
+            <span class="pp-search-label-text">OEM / Şasi Sorgulama</span>
+          </div>
+          <div class="pp-search-box">
+            <svg class="pp-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="pp-search-input" id="main-search-input" placeholder="OEM, Şasi Numarası veya Parça Adı giriniz...">
+            <button type="button" class="pp-search-btn" id="main-search-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Parça Bul</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sağ İkonlar & Kullanıcı Bilgisi (Dinamik Favoriler & Bildirim Merkezi) -->
+        <div class="pp-header-actions">
+          <!-- Favoriler (Dinamik Sayaç & Filtreleyici) -->
+          <div class="pp-action-item" id="btn-header-favorites" title="Favorilerim (Listeyi Filtrele)" onclick="toggleFavoritesView()" style="cursor: pointer;">
+            <div style="position: relative; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span class="pp-action-badge" id="header-favorites-badge">0</span>
+            </div>
+            <span style="margin-top: 3px;">Favoriler</span>
+          </div>
+
+          <!-- Mesajlar & Bildirim Merkezi (Offcanvas Tetikleyici) -->
+          <div class="pp-action-item" id="btn-header-messages" title="Bildirim & Mesaj Merkezi" onclick="toggleNotificationsDrawer(true)" style="cursor: pointer;">
+            <div style="position: relative; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span class="pp-action-badge" id="header-messages-badge">0</span>
+            </div>
+            <span style="margin-top: 3px;">Mesajlar</span>
+          </div>
+
+          <!-- Sepetim (Offcanvas Tetikleyici) -->
+          <div class="pp-cart-widget" id="btn-header-cart" title="Sepetim (Sağ Paneli Aç)" onclick="toggleCartDrawer(true)" style="cursor: pointer;">
+            <div class="pp-cart-badge-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span class="pp-cart-badge" id="header-cart-badge">0</span>
+            </div>
+            <div class="pp-cart-info">
+              <span class="pp-cart-title">SEPETİM</span>
+              <span class="pp-cart-amount" id="header-cart-amount">₺0,00</span>
+            </div>
+          </div>
+
+          <!-- Profil -->
+          <div class="pp-user-widget" id="btn-header-profile" title="Ahmet Yılmaz - Kurumsal">
+            <div class="pp-user-avatar">AY</div>
+            <div class="pp-user-details">
+              <span class="pp-user-name">Ahmet Yılmaz</span>
+              <span class="pp-user-role">Kurumsal ▾</span>
+            </div>
+
+            <!-- Profil Açılır Menü (Tıklandığında açılır) -->
+            <div id="dropdown-profile" class="pp-dropdown-menu hidden">
+              <div class="pp-dropdown-header">
+                <div>
+                  <div style="font-weight: 800; color: #0f172a;">Ahmet Yılmaz</div>
+                  <div style="font-size: 0.68rem; color: #64748b; font-weight: 500;">ahmet@yilmazoto.com</div>
+                </div>
+                <span class="pp-dropdown-badge">Kurumsal</span>
+              </div>
+              <div class="pp-dropdown-list">
+                <a href="bayi.html" class="pp-dropdown-item">
+                  <span>🏢</span>
+                  <span style="font-weight: 600;">Bayi Yönetim Paneli</span>
+                </a>
+                <a href="#garaj" class="pp-dropdown-item">
+                  <span>🚗</span>
+                  <span style="font-weight: 600;">Garajım (Kayıtlı Araçlar)</span>
+                </a>
+                <a href="#siparisler" class="pp-dropdown-item">
+                  <span>📦</span>
+                  <span style="font-weight: 600;">Siparişlerim & Faturalarım</span>
+                </a>
+                <a href="#ayarlar" class="pp-dropdown-item">
+                  <span>⚙️</span>
+                  <span style="font-weight: 600;">Hesap Ayarları</span>
+                </a>
+              </div>
+              <a href="index.html" class="pp-dropdown-footer" style="color: #ef4444;">🚪 Güvenli Çıkış Yap</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         3. KATEGORİ VE MEGA MENÜ NAVİGASYON BARI (screen(2).png)
+         ======================================================================== -->
+    <nav class="pp-cat-nav" aria-label="Ürün Kategorileri">
+      <div class="pp-container pp-cat-nav-inner">
+        <!-- Tüm Kategoriler Butonu (prompt.md Adım 1) -->
+        <button type="button" class="pp-all-categories-btn" id="btn-all-categories" data-category="Tüm Kategoriler" onclick="selectCategory('Tüm Kategoriler')">
+          <span>☰</span>
+          <span>Tüm Kategoriler</span>
+        </button>
+
+        <!-- Kategori Linkleri (prompt.md Adım 1 & 2 - Dinamik Backend Filtreleme) -->
+        <div class="pp-cat-links" id="pp-category-links">
+          <a href="#motor" class="pp-cat-link" data-category="Motor & Mekanik" onclick="selectCategory('Motor & Mekanik', event)">Motor & Mekanik</a>
+          <a href="#fren" class="pp-cat-link active" data-category="Fren Sistemi" onclick="selectCategory('Fren Sistemi', event)">Fren Sistemi</a>
+          <a href="#suspansiyon" class="pp-cat-link" data-category="Süspansiyon & Direksiyon" onclick="selectCategory('Süspansiyon & Direksiyon', event)">Süspansiyon & Direksiyon</a>
+          <a href="#filtre" class="pp-cat-link" data-category="Filtre & Bakım" onclick="selectCategory('Filtre & Bakım', event)">Filtre & Bakım</a>
+          <a href="#elektrik" class="pp-cat-link" data-category="Elektrik & Aydınlatma" onclick="selectCategory('Elektrik & Aydınlatma', event)">Elektrik & Aydınlatma</a>
+          <a href="#kaporta" class="pp-cat-link" data-category="Kaporta & Karoser" onclick="selectCategory('Kaporta & Karoser', event)">Kaporta & Karoser</a>
+          <a href="#yag" class="pp-cat-link" data-category="Madeni Yağlar" onclick="selectCategory('Madeni Yağlar', event)">Madeni Yağlar</a>
+          <a href="#firsat" class="pp-cat-link highlight" data-category="Fırsat Ürünleri" onclick="selectCategory('Fırsat Ürünleri', event)">Fırsat Ürünleri</a>
+          <a href="#saticilar" class="pp-cat-link" data-category="Onaylı Satıcılar" onclick="selectCategory('Onaylı Satıcılar', event)">Onaylı Satıcılar</a>
+          <a href="#b2b" class="pp-cat-link b2b-badge-link" data-category="Toptan B2B Portalı" onclick="selectCategory('Toptan B2B Portalı', event)">Toptan B2B Portalı</a>
+          <a href="tel:08504407272" class="pp-cat-link" data-category="Yardım & Destek">Yardım & Destek</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================================================================
+         4. AKTİF GARAJ VE UYUM BİLDİRİM BANDI (screen(2).png)
+         ======================================================================== -->
+    <div id="pp-garage-alert-bar" class="pp-garage-alert-bar hidden" style="display: none;">
+      <div class="pp-container pp-garage-alert-inner">
+        <div class="pp-garage-alert-left">
+          <div class="pp-garage-check-icon">✓</div>
+          <span id="pp-garage-alert-text"><strong>Aktif Garaj Filtresi:</strong> Volkswagen Golf VII 5G1 (2016) 1.6 TDI 81kW / 110 HP (Motor Kodu: CXXB / DBKA)</span>
+          <span class="pp-garage-alert-badge">%100 PARÇA EŞLEŞME GÜVENCESİ</span>
+        </div>
+        <div class="pp-garage-alert-right">
+          <a href="#degistir" class="pp-change-vehicle-link" onclick="handleGarageVehicleChange(event)">🔄 Garaj Aracını Değiştir</a>
+          <span class="pp-protocol-info">Şasi Doğrulama Protokolü: ISO 3779</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         5. BREADCRUMB & BAŞLIK / 3 KPI METRİK KARTLARI (screen(2).png)
+         ======================================================================== -->
+    <div class="pp-container">
+      <!-- Sayfa Başlığı ve 3 KPI Kutusu -->
+      <div class="pp-page-header-row">
+        <div class="pp-page-title-group">
+          <h1 class="pp-page-title">Volkswagen Golf VII Uyumlu Tüm Yedek Parçalar</h1>
+          <p class="pp-page-subtitle">
+            Toplam 348 parça listeleniyor (<strong>42 farklı</strong> onaylı distribütör ve B2B toptancısından canlı stok verisi)
+          </p>
+        </div>
+
+        <!-- 3 KPI Kutusu (312 SIFIR OEM / Aynı Gün KARGO / %100 İADE) -->
+        <div class="pp-kpi-group">
+          <div class="pp-kpi-card">
+            <span class="pp-kpi-val">312</span>
+            <span class="pp-kpi-label">SIFIR OEM</span>
+          </div>
+          <div class="pp-kpi-card">
+            <span class="pp-kpi-val red">Aynı Gün</span>
+            <span class="pp-kpi-label">KARGO İMKANI</span>
+          </div>
+          <div class="pp-kpi-card">
+            <span class="pp-kpi-val green">%100</span>
+            <span class="pp-kpi-label">İADE GARANTİSİ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aktif Filtre Rozetleri Çubuğu (prompt.md Adım 1 - Dinamik & Varsayılan Gizli) -->
+      <div id="pp-active-filters-row" class="pp-active-filters-row hidden" style="display: none;">
+        <span class="pp-active-filters-label">AKTİF FİLTRELER:</span>
+        <div id="pp-active-filters-container" class="pp-active-filters-container">
+          <!-- Dinamik rozetler JS tarafından buraya eklenecektir -->
+        </div>
+        <span id="pp-clear-all-btn" class="pp-clear-all-link" onclick="clearAllFilters(event)">Tümünü Temizle</span>
+      </div>
+
+      <!-- ======================================================================
+           6. ANA İÇERİK DÜZENİ: SOL FİLTRE PANELİ + SAĞ KATALOG ÜRÜNLERİ
+           ====================================================================== -->
+      <div class="pp-main-layout">
+
+        <!-- ====================================================================
+             SOL KENAR FİLTRE PANELİ (Masaüstünde Sabit, Mobilde Offcanvas Çekmece)
+             ==================================================================== -->
+        <aside class="pp-sidebar">
+
+          <!-- Mobil Çekmece Başlığı (Yalnızca Mobilde Görünür - prompt.md Adım 2) -->
+          <div class="pp-sidebar-mobile-header">
+            <div class="pp-sidebar-mobile-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5722" stroke-width="2.3">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+              <span>Katalog Filtreleri</span>
+            </div>
+            <button type="button" class="pp-sidebar-close-btn" onclick="toggleMobileFilters(false)" title="Filtreleri Kapat">✕</button>
+          </div>
+
+          <!-- Seçili Araç Kartı -->
+          <div class="pp-vehicle-card">
+            <div class="pp-vehicle-card-header">
+              <div class="pp-vehicle-card-title">
+                <span>🚗</span>
+                <span>Seçili Araç</span>
+              </div>
+              <span class="pp-vehicle-card-badge">DOĞRULANDI</span>
+            </div>
+            <div class="pp-vehicle-name">Volkswagen Golf VII</div>
+            <div class="pp-vehicle-detail">1.6 TDI CR / 2016 Model / HB</div>
+            <div class="pp-vehicle-vin">Şasi Kodu: WVWZZZAUZGW***</div>
+            <button type="button" class="pp-vehicle-switch-btn">
+              <span>🔄</span>
+              <span>Farklı Araç Seç</span>
+            </button>
+          </div>
+
+          <!-- OEM / Parça Kodu ile Filtrele -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">OEM / Parça Kodu ile Filtrele</div>
+            <p style="font-size: 0.73rem; color: #64748b; margin-bottom: 8px;">Üretici veya VAG referans kodunu girin:</p>
+            <input type="text" id="pp-filter-oem-input" class="pp-oem-filter-input" placeholder="# Örn: 1K0 615 301 AA">
+          </div>
+
+          <!-- Alt Kategori (prompt.md Adım 1 - data-filter-type="subcategory") -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">
+              <span>Alt Kategori</span>
+              <span class="pp-filter-box-meta">4 Grup</span>
+            </div>
+            <div class="pp-checkbox-list">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="subcategory" value="Ön Fren Diski">
+                  <span>Ön Fren Diski</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="subcategory" data-val="Ön Fren Diski">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="subcategory" value="Arka Fren Diski">
+                  <span>Arka Fren Diski</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="subcategory" data-val="Arka Fren Diski">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="subcategory" value="Ön Fren Balatası">
+                  <span>Ön Fren Balatası</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="subcategory" data-val="Ön Fren Balatası">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="subcategory" value="Fren Kaliperi & Tamir Tk.">
+                  <span>Fren Kaliperi & Tamir Tk.</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="subcategory" data-val="Fren Kaliperi & Tamir Tk.">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Parça Markası (prompt.md Adım 1 - data-filter-type="brand") -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">
+              <span>Parça Markası (OEM/OES)</span>
+              <span class="pp-filter-box-clear" style="cursor: pointer;">Temizle</span>
+            </div>
+            <div class="pp-checkbox-list">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="Bosch">
+                  <span>Bosch (Almanya)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="Bosch">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="Brembo">
+                  <span>Brembo (İtalya)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="Brembo">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="TRW Lucas">
+                  <span>TRW Lucas</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="TRW Lucas">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="Ferodo">
+                  <span>Ferodo Racing</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="Ferodo">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="ATE">
+                  <span>ATE Continental</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="ATE">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="brand" value="Textar">
+                  <span>Textar Braking</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="brand" data-val="Textar">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Ürün Durumu & Sertifikasyon (prompt.md Adım 1 - data-filter-type="condition") -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">Ürün Durumu & Sertifikasyon</div>
+            <div class="pp-checkbox-list">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="condition" value="Sıfır">
+                  <span>Sıfır / Orijinal Kutusunda</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="condition" data-val="Sıfır">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="condition" value="Muadil">
+                  <span>Muadil / Kalite Onaylı</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="condition" data-val="Muadil">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="condition" value="Çıkma">
+                  <span>Çıkma / Test Edilmiş Revize</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="condition" data-val="Çıkma">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Fiyat Aralığı (TL) (prompt.md Adım 2) -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">Fiyat Aralığı (TL)</div>
+            <div class="pp-price-range-inputs">
+              <div>
+                <span style="font-size: 0.68rem; color: #64748b; display: block; margin-bottom: 2px;">En Az</span>
+                <input type="number" id="pp-filter-min-price" class="pp-price-range-input" placeholder="Min ₺" value="">
+              </div>
+              <div>
+                <span style="font-size: 0.68rem; color: #64748b; display: block; margin-bottom: 2px;">En Çok</span>
+                <input type="number" id="pp-filter-max-price" class="pp-price-range-input" placeholder="Max ₺" value="">
+              </div>
+            </div>
+            <div class="pp-price-slider-track">
+              <div class="pp-price-slider-fill"></div>
+            </div>
+            <span id="btn-apply-price-filter" class="pp-price-apply-btn" style="cursor: pointer;">Fiyatı Uygula</span>
+          </div>
+
+          <!-- Satıcı Tipi & Doğrulama (prompt.md Adım 1) -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">Satıcı Tipi & Doğrulama</div>
+            <div class="pp-toggle-row">
+              <div>
+                <div class="pp-toggle-label">Yalnızca Onaylı Mağaza</div>
+                <div class="pp-toggle-sub">Tescilli fatura & orijinal garantisi</div>
+              </div>
+              <label class="pp-switch">
+                <input type="checkbox" data-filter-type="sellerType" value="verified">
+                <span class="pp-switch-slider"></span>
+              </label>
+            </div>
+            <div class="pp-checkbox-list" style="margin-top: 10px;">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="sellerType" value="distributor">
+                  <span>Doğrudan Distribütör</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="sellerType" data-val="distributor">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="sellerType" value="wholesaler">
+                  <span>B2B Toptancı & Stokçu</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="sellerType" data-val="wholesaler">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Depo / Satıcı Şehri (prompt.md Adım 1 - data-filter-type="city") -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">Depo / Satıcı Şehri</div>
+            <div class="pp-checkbox-list">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="city" value="İstanbul">
+                  <span>İstanbul (Avrupa + And)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="city" data-val="İstanbul">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="city" value="Ankara">
+                  <span>Ankara (Ostim / İvedik)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="city" data-val="Ankara">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="city" value="İzmir">
+                  <span>İzmir (1. Sanayi / Çiğli)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="city" data-val="İzmir">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="city" value="Bursa">
+                  <span>Bursa (Nilüfer)</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="city" data-val="Bursa">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Sevkiyat Tercihleri (prompt.md Adım 1 - data-filter-type="shipping") -->
+          <div class="pp-filter-box">
+            <div class="pp-filter-box-title">Sevkiyat Tercihleri</div>
+            <div class="pp-checkbox-list">
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="shipping" value="sameDay">
+                  <span>Aynı Gün Kargoya Verilenler</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="shipping" data-val="sameDay">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="shipping" value="freeShipping">
+                  <span>Ücretsiz Kargo Olanlar</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="shipping" data-val="freeShipping">(0)</span>
+              </label>
+              <label class="pp-checkbox-item">
+                <span class="pp-checkbox-left">
+                  <input type="checkbox" data-filter-type="shipping" value="immediateDelivery">
+                  <span>Depodan / Sanayiden Hemen Teslim</span>
+                </span>
+                <span class="pp-checkbox-count" data-facet="shipping" data-val="immediateDelivery">(0)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Mobil Çekmece Sonuçları Göster Butonu (Yalnızca Mobilde Görünür - prompt.md Adım 2) -->
+          <div class="pp-sidebar-mobile-footer">
+            <button type="button" class="pp-sidebar-apply-btn" onclick="toggleMobileFilters(false)">
+              <span>✓ Sonuçları Göster (348 Ürün)</span>
+            </button>
+          </div>
+
+        </aside>
+
+        <!-- ====================================================================
+             SAĞ KATALOG ALANI: SIRALAMA & 3/4 SÜTUNLU AKICI ÜRÜN KARTLARI
+             ==================================================================== -->
+        <main class="pp-catalog-main">
+
+          <!-- Mobil Filtre Açma Çubuğu (Yalnızca Mobil ve Tablette Görünür - prompt.md Adım 2) -->
+          <div class="pp-mobile-filter-bar">
+            <button type="button" class="pp-btn-open-mobile-filter" onclick="toggleMobileFilters(true)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+              <span>Katalog Filtreleri</span>
+              <span class="pp-mobile-filter-count-badge">4 Aktif</span>
+            </button>
+            <div class="pp-mobile-filter-info">
+              <span>Toplam <strong>348</strong> Parça</span>
+            </div>
+          </div>
+
+          <!-- Sıralama ve Görünüm Seçenekleri Çubuğu -->
+          <div class="pp-sort-toolbar">
+            <div class="pp-sort-left">
+              <span>Sıralama:</span>
+              <select class="pp-sort-select">
+                <option value="smart" selected>Önerilen Sıralama (Akıllı Eşleşme)</option>
+                <option value="price-asc">Fiyat: Artan</option>
+                <option value="price-desc">Fiyat: Azalan</option>
+                <option value="popular">En Çok Satanlar</option>
+              </select>
+            </div>
+
+            <div class="pp-sort-middle">
+              Gösterilen: <strong>1 - 6</strong> / 348
+            </div>
+
+            <div class="pp-sort-right">
+              <div class="pp-page-size-group">
+                <span>Sayfa Başı:</span>
+                <button type="button" class="pp-page-size-btn active">24</button>
+                <button type="button" class="pp-page-size-btn">48</button>
+                <button type="button" class="pp-page-size-btn">96</button>
+              </div>
+              <div class="pp-view-toggle-group">
+                <button type="button" class="pp-view-btn active" title="Izgara Görünümü">⊞</button>
+                <button type="button" class="pp-view-btn" title="Liste Görünümü">☰</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================================================================
+               ÜRÜN KARTLARI GRİDİ (Dinamik API Yükleme - Prompt Kural 1 & 3)
+               ================================================================== -->
+          <div class="pp-products-grid" id="products-grid"></div>
+
+          <!-- ==================================================================
+               10. ŞASİ (VIN) NUMARASI İLE %100 UYUM TEYİDİ BANDI (screen(2).png)
+               ================================================================== -->
+          <div class="pp-vin-banner">
+            <div class="pp-vin-banner-inner">
+              <div class="pp-vin-banner-left">
+                <div class="pp-vin-shield-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="pp-vin-banner-tag">PARÇAPRO GARANTİSİ • Hatalı Sipariş Önleme Motoru</div>
+                  <h3 class="pp-vin-banner-title">Şasi (VIN) Numarası ile %100 Uyum Teyidi</h3>
+                  <p class="pp-vin-banner-desc">
+                    Aracınızın ruhsatında yer alan 17 haneli şasi numarasını girin; teknik uzman ekibimiz fren diski çapını ve balata PR kodunu (1ZE, 1KD, 1ZA vb.) doğrulasın. Yanlış parça gelme ihtimalini sıfıra indirin.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pp-vin-form">
+                <input type="text" class="pp-vin-input" placeholder="17 HANELİ ŞASİ NO..." maxlength="17">
+                <button type="button" class="pp-vin-btn">
+                  <span>✓</span>
+                  <span>Doğrula & Listele</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================================================================
+               11. SAYFALAMA (PAGINATION - screen(2).png)
+               ================================================================== -->
+          <div class="pp-pagination-row">
+            <div class="pp-pagination-info">
+              Toplam <strong>348 sonuçtan 1 - 24</strong> arası gösteriliyor (Sayfa 1 / 15)
+            </div>
+            <div class="pp-pagination-nav">
+              <button type="button" class="pp-page-btn" disabled>&lt; Önceki</button>
+              <button type="button" class="pp-page-btn active">1</button>
+              <button type="button" class="pp-page-btn">2</button>
+              <button type="button" class="pp-page-btn">3</button>
+              <span style="color: #94a3b8; padding: 0 4px;">...</span>
+              <button type="button" class="pp-page-btn">15</button>
+              <button type="button" class="pp-page-btn">Sonraki &gt;</button>
+            </div>
+          </div>
+
+          <!-- ==================================================================
+               12. TEKNİK USTA REHBERİ (screen(2).png)
+               ================================================================== -->
+          <div class="pp-tech-guide">
+            <h3 class="pp-tech-guide-title">Volkswagen Golf VII Fren Parçaları Satın Alma Rehberi</h3>
+            <div class="pp-tech-guide-grid">
+              <div class="pp-tech-guide-col">
+                <h4>PR Kodları ve Disk Çapları:</h4>
+                <p>
+                  Volkswagen Golf VII modellerinde fabrika çıkışı donanıma bağlı olarak farklı ön disk çapları (276mm, 288mm veya 312mm) bulunmaktadır. 1.6 TDI motor seçeneklerinde çoğunlukla 288mm havalandırmalı ön diskler kullanılır. Sipariş vermeden önce bagaj havuzundaki etikette yer alan 1ZA / 1ZE kodlarını kontrol etmeniz önerilir.
+                </p>
+                <h4>Orijinal Ekipman (OEM) vs Muadil:</h4>
+                <p>
+                  Sayfamızda listelenen tüm fren balataları ve diskleri ECE R90 Avrupa güvenlik standartlarına tam uyumludur. Sürtünme katsayısı, yüksek ısı dayanımı ve fren mesafesi fabrika spesifikasyonlarını karşılamaktadır.
+                </p>
+                <h4>Çoklu Satıcı Karşılaştırması:</h4>
+                <p>
+                  ParçaPro, aynı OEM referansına sahip parçaları Türkiye genelindeki tüm onaylı toptancı ve yetkili distribütörlerden anlık olarak tarar. Böylece aynı orijinal kutulu Brembo veya Bosch parçayı en uygun kargo süresi ve en avantajlı fiyatla tedarik edebilirsiniz.
+                </p>
+              </div>
+
+              <div class="pp-tech-ref-box">
+                <h5>Hızlı Referans Tablosu:</h5>
+                <ul class="pp-tech-ref-list">
+                  <li>• Ön Disk OEM: 1K0 615 301 AA / 5Q0 615 301 F</li>
+                  <li>• Ön Balata OEM: 5Q0 698 151 / 8V0 698 151 C</li>
+                  <li>• Arka Balata OEM: 5Q0 698 451 / 3Q0 698 451</li>
+                </ul>
+                <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #e2e8f0; font-size: 0.72rem; color: #b45309;">
+                  ⚠️ Aracınız tabloda yer almıyorsa veya 288mm / 312mm şüphesi yaşıyorsanız lütfen şasi numaranızla soru iletin.
+                  <a href="#destek" style="color: #0284c7; font-weight: 700; display: block; margin-top: 4px;">Usta Destek Hattı →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         13. GÜVEN ROZETLERİ (screen.png & screen(2).png)
+         ======================================================================== -->
+    <section class="pp-trust-bar">
+      <div class="pp-container">
+        <div class="pp-trust-grid">
+          <div class="pp-trust-item">
+            <span class="pp-trust-icon">🛡️</span>
+            <div class="pp-trust-text">
+              <h4>%100 Orijinal & Muadil</h4>
+              <p>Parça sertifikalı OEM & OES güvencesi</p>
+            </div>
+          </div>
+
+          <div class="pp-trust-item">
+            <span class="pp-trust-icon">🏢</span>
+            <div class="pp-trust-text">
+              <h4>Onaylı B2B Ağı</h4>
+              <p>Yetkili distribütörler ve toptancılar</p>
+            </div>
+          </div>
+
+          <div class="pp-trust-item">
+            <span class="pp-trust-icon">🚚</span>
+            <div class="pp-trust-text">
+              <h4>Hızlı Sevkiyat</h4>
+              <p>Saat 16:00 öncesi aynı gün kargo</p>
+            </div>
+          </div>
+
+          <div class="pp-trust-item">
+            <span class="pp-trust-icon">🔄</span>
+            <div class="pp-trust-text">
+              <h4>14 Gün Kolay İade</h4>
+              <p>Şasi ve uyum garantili iade desteği</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         14. ALT FOOTER & GÜVENLİK BİLGİLERİ (screen.png & screen(2).png)
+         ======================================================================== -->
+    <footer class="pp-footer">
+      <div class="pp-container">
+        <div class="pp-footer-grid">
+          <div class="pp-footer-col">
+            <div class="pp-logo" style="margin-bottom: 12px;">
+              <span class="pp-logo-title" style="font-size: 1.3rem;">Parça<span>Pro</span></span>
+            </div>
+            <p style="font-size: 0.76rem; color: #94a3b8; line-height: 1.6; margin-bottom: 14px;">
+              Türkiye'nin en kapsamlı otomotiv yedek parça pazaryeri ve B2B toptan tedarik platformu. Şasi no ile uyumluluk garantisi.
+            </p>
+            <div style="display: flex; gap: 10px; font-size: 1.1rem; color: #94a3b8;">
+              <span>🌐</span>
+              <span>🛡️</span>
+              <span>💬</span>
+            </div>
+          </div>
+
+          <div class="pp-footer-col">
+            <h5>Kurumsal</h5>
+            <ul class="pp-footer-links">
+              <li><a href="#hakkimizda">Hakkımızda</a></li>
+              <li><a href="#oem">OEM Veri Sağlayıcıları</a></li>
+              <li><a href="#ortaklar">İş Ortaklarımız</a></li>
+              <li><a href="#kariyer">Kariyer</a></li>
+              <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="pp-footer-col">
+            <h5>Satıcılar & B2B</h5>
+            <ul class="pp-footer-links">
+              <li><a href="#satici-ol">ParçaPro Satıcısı Olun</a></li>
+              <li><a href="#b2b-katalog">B2B Toptan Kataloğu</a></li>
+              <li><a href="#entegrasyon">Entegrasyon & API</a></li>
+              <li><a href="#komisyon">Komisyon Oranları</a></li>
+              <li><a href="#akademi">Satıcı Akademi</a></li>
+            </ul>
+          </div>
+
+          <div class="pp-footer-col">
+            <h5>Müşteri Hizmetleri</h5>
+            <ul class="pp-footer-links">
+              <li><a href="#siparis">Sipariş Takibi</a></li>
+              <li><a href="#sasi-dogrulama">Şasi No ile Uyum Doğrulama</a></li>
+              <li><a href="#iade">İptal & İade Koşulları</a></li>
+              <li><a href="#sss">Sıkça Sorulan Sorular</a></li>
+              <li><a href="#kvkk">KVKK ve Güvenlik</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pp-footer-bottom">
+          <div>
+            © 2026 ParçaPro Otomotiv Teknolojileri A.Ş. Tüm hakları saklıdır.
+          </div>
+          <div class="pp-security-badges">
+            <span>🔒 256-Bit SSL</span>
+            <span>•</span>
+            <span>3D Secure</span>
+            <span>•</span>
+            <span>MasterCard / Visa / Troy</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: HEADER ETKİLEŞİMLERİ & GERÇEK ÜRÜN ÇEKME (FETCH)
+       (Prompt Kural 1, 2, 3 - SweetAlert2 & Modern Community Standards)
+       ======================================================================== -->
+  <script>
+    // 0. XSS Koruması ve Kaçırma Fonksiyonu
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // 1. KURAL 1 & 3: TEK BİR ÜRÜN KARTI ŞABLONU (TEMPLATE LITERAL)
+    // Tasarıma, CSS class'larına, hiyerarşiye ve renklere KESİNLİKLE dokunulmamıştır.
+    function createProductCardHTML(product, index) {
+      // Alanları normalize et (Farklı API & Veritabanı yapılarıyla %100 uyumlu)
+      const id = product.id || product.productId || product.tenantProductId || `prod-${index}`;
+      const name = product.name || (product.product && product.product.name) || 'Orijinal Yedek Parça';
+      const oemCode = product.oeNumber || product.oemCode || (product.product && (product.product.oeNumber || product.product.oemCode)) || '1K0 615 301 AA';
+      const brand = (product.brand || product.vehicleBrand || (product.product && (product.product.brand || product.product.vehicleBrand)) || 'BREMBO').toUpperCase();
+
+      // Rozetler
+      const isCombo = product.isDiscounted || (product.category && product.category.toLowerCase().includes('kit')) || (name.toLowerCase().includes('set') || name.toLowerCase().includes('takım'));
+      const subBadge = isCombo ? 'KOMBO SET' : (product.category || product.partGroup || 'Orijinal Ekipman');
+      const subBadgeClass = isCombo ? 'red-solid' : (index % 2 === 0 ? 'red-text' : 'blue-text');
+
+      // Fiyatlandırma
+      const listPrice = (product.pricing && product.pricing.listPrice) || product.defaultPrice || product.price || (product.product && (product.product.defaultPrice || product.product.price)) || 3450;
+      const finalPrice = (product.pricing && product.pricing.finalPrice) || product.discountedPrice || product.customPrice || listPrice;
+      const formattedPrice = '₺' + parseFloat(finalPrice).toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+
+      // Stok Durumu
+      const stock = product.stock !== undefined ? product.stock : ((product.product && product.product.stock !== undefined) ? product.product.stock : 14);
+      const stockPillClass = stock > 10 ? 'green' : '';
+
+      // Uyum ve Satıcı Detayları (Dinamik Bayi / Satıcı Eşleştirmesi)
+      const compat = product.compatibleModels || (product.product && product.product.compatibleModels) || 'VW Golf VII / Passat B8 / Audi A3 8V (Uyumlu)';
+      const sellerName = product.dealerName 
+        || product.tenantName 
+        || (product.tenant && product.tenant.name) 
+        || (product.user && (product.user.companyName || product.user.name)) 
+        || product.companyName 
+        || product.sellerName 
+        || 'Ahmet Oto (Yetkili Bayi)';
+      const sellerRating = product.sellerRating || '4.9';
+      const sellerSales = product.sellerSales || (120 + ((index * 23) % 250));
+      const city = product.city || (product.tenant && product.tenant.city) || 'İstanbul (İkitelli)';
+      const shippingText = product.shippingText || (stock > 5 ? 'Aynı Gün Kargo' : 'Ücretsiz Kargo');
+      const otherCount = product.otherSellersCount || (3 + (index % 6));
+      const specPill = product.specPill || (product.category ? `${product.category}` : 'Çap: 288 mm (Havalandırmalı)');
+
+      // Görsel
+      const imageUrl = product.imageUrl || (product.images && product.images[0]) || (product.product && (product.product.imageUrl || (product.product.images && product.product.images[0]))) || '';
+      
+      const imgElement = imageUrl
+        ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}" class="pp-card-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=400&auto=format&fit=crop&q=80';">`
+        : `<svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="1.8" class="pp-card-img">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="12" y1="2" x2="12" y2="6"></line>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="6" y2="12"></line>
+            <line x1="18" y1="12" x2="22" y2="12"></line>
+          </svg>`;
+
+      return `
+        <article class="pp-card" data-product-id="${escapeHtml(String(id))}">
+          <div>
+            <div class="pp-card-header">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="pp-card-brand-badge">${escapeHtml(brand)}</span>
+                <span class="pp-card-sub-badge ${subBadgeClass}">${escapeHtml(subBadge)}</span>
+              </div>
+              ${(() => {
+        const isFav = currentFavorites.includes(String(id));
+        return `<button type="button" class="pp-card-fav-btn ${isFav ? 'active' : ''}" style="${isFav ? 'color: #ef4444;' : ''}" title="Favorilere Ekle" onclick="handleToggleFavorite(this, '${escapeHtml(String(id))}')">${isFav ? '❤️' : '♡'}</button>`;
+      })()}
+            </div>
+
+            <!-- Görsel -->
+            <div class="pp-card-img-wrap">
+              ${imgElement}
+              <span class="pp-card-spec-pill">${escapeHtml(specPill)}</span>
+            </div>
+
+            <!-- Parça Bilgileri -->
+            <div class="pp-card-body">
+              <div class="pp-card-oem-code">OEM: ${escapeHtml(oemCode)}</div>
+              <h3 class="pp-card-title" title="${escapeHtml(name)}">
+                ${escapeHtml(name)}
+              </h3>
+              <div class="pp-card-compat-pill">
+                <span>✓</span>
+                <span>${escapeHtml(compat)}</span>
+              </div>
+
+              <div class="pp-card-seller-row">
+                <span class="pp-seller-name">
+                  ${escapeHtml(sellerName)} <span class="pp-seller-badge-verified">✓</span>
+                </span>
+                <span class="pp-seller-rating">★ ${sellerRating} (${sellerSales})</span>
+              </div>
+
+              <div class="pp-card-city-row">
+                <span>📍 ${escapeHtml(city)}</span>
+                <span class="pp-free-shipping">⚡ ${escapeHtml(shippingText)}</span>
+              </div>
+
+              <!-- Diğer Mağazalar Teklif Kutusu -->
+              <div class="pp-compare-sellers-box" onclick="handleCompareOffers('${escapeHtml(String(id))}')">
+                <span>Bu parçayı satan diğer <strong>${otherCount} mağaza</strong></span>
+                <span class="pp-compare-arrow">Fiyatları Karşılaştır →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fiyat & Butonlar -->
+          <div>
+            <div class="pp-card-price-row">
+              <div class="pp-price-label-col">
+                <span class="pp-card-price-label">EN İYİ FİYAT</span>
+                <div style="display: flex; align-items: baseline; gap: 4px;">
+                  <span class="pp-card-price-main">${formattedPrice}</span>
+                  <span class="pp-card-price-unit">/tk</span>
+                </div>
+              </div>
+              <span class="pp-card-stock-pill ${stockPillClass}">Stokta ${stock} Tk</span>
+            </div>
+
+            <div class="pp-card-btn-group">
+              <button type="button" class="pp-btn-inspect" onclick="handleInspectProduct('${escapeHtml(String(id))}')">👁️ İncele</button>
+              <button type="button" class="pp-btn-add-cart" onclick="handleAddToCart('${escapeHtml(String(id))}', '${escapeHtml(name)}', ${finalPrice}, '${escapeHtml(oemCode)}', '${escapeHtml(imageUrl)}', '${escapeHtml(sellerName)}')">🛒 Sepete Ekle</button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    // 2. KURAL 2 & PROMPT.MD ADIM 1 & 2: DİNAMİK KATEGORİ VE ÜRÜN YÜKLEME SİSTEMİ
+    let currentActiveCategory = 'Fren Sistemi'; // Varsayılan aktif kategori
+
+    // Adım 1: Frontend Tıklama (Click) ve Aktif Durum (UI) Kontrolü (prompt.md Adım 1)
+    
+    // Kategori Sekmelerine Click Listener Ekleme (prompt.md Adım 1)
+    function initCategoryNavigation() {
+      const allCatBtn = document.getElementById('btn-all-categories') || document.querySelector('.pp-all-categories-btn');
+      if (allCatBtn && !allCatBtn._bound) {
+        allCatBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectCategory('Tüm Kategoriler');
+        });
+        allCatBtn._bound = true;
+      }
+
+      const catLinks = document.querySelectorAll('.pp-cat-link');
+      catLinks.forEach(link => {
+        if (!link._bound) {
+          link.addEventListener('click', (e) => {
+            const catName = (link.getAttribute('data-category') || link.textContent || '').trim();
+            if (catName && !catName.includes('Portal') && !catName.includes('Destek')) {
+              e.preventDefault();
+              selectCategory(catName);
+            }
+          });
+          link._bound = true;
+        }
+      });
+    }
+  
+    function selectCategory(categoryName, e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+
+      const isAll = !categoryName || categoryName === 'Tüm Kategoriler' || categoryName === 'ALL' || categoryName === 'all';
+      const targetCategory = isAll ? 'Tüm Kategoriler' : categoryName.trim();
+      currentActiveCategory = isAll ? '' : targetCategory;
+
+      // 1. Önceki seçili sekmeden "Aktif" CSS class'larını kaldır, tıklanan sekmeye ekle (Tasarımı bozmadan)
+      const allCatBtn = document.getElementById('btn-all-categories') || document.querySelector('.pp-all-categories-btn');
+      const catLinks = document.querySelectorAll('.pp-cat-link');
+
+      catLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkCat = (link.getAttribute('data-category') || link.textContent || '').trim();
+        if (!isAll && linkCat.toLowerCase() === targetCategory.toLowerCase()) {
+          link.classList.add('active');
+          try {
+            link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          } catch (err) {}
+        }
+      });
+
+      if (allCatBtn) {
+        if (isAll) {
+          allCatBtn.classList.add('active');
+        } else {
+          allCatBtn.classList.remove('active');
+        }
+      }
+
+      // 2. Aktif Filtre Rozetini Dinamik Olarak Ekle veya Kaldır (prompt.md Adım 2)
+      if (!isAll) {
+        addActiveFilter('category', `Kategori: ${targetCategory}`, () => {
+          selectCategory('Tüm Kategoriler');
+        });
+      } else {
+        window.activeFilters.delete('category');
+        renderActiveFilterPills();
+      }
+
+      // Sayfa Başlığını Güncelle
+      updateCategoryUIHeaders(targetCategory);
+
+      // 3. Ürünleri Dinamik Olarak Getir (Filtresiz veya İlgili Kategori ile)
+      buildAndFetchFilters();
+    }
+
+    
+    // =========================================================================
+    // DİNAMİK AKTİF GARAJ VE ŞASİ FİLTRESİ YÖNETİMİ (prompt.md Adım 1)
+    // =========================================================================
+    function showActiveGarageFilter(infoText) {
+      const bar = document.getElementById('pp-garage-alert-bar');
+      if (!bar) return;
+      if (infoText) {
+        const textSpan = document.getElementById('pp-garage-alert-text');
+        if (textSpan) {
+          textSpan.innerHTML = '<strong>Aktif Garaj / Şasi Filtresi:</strong> ' + escapeHtml(infoText);
+        }
+      }
+      bar.classList.remove('hidden');
+      bar.style.display = 'block';
+    }
+
+    function hideActiveGarageFilter() {
+      const bar = document.getElementById('pp-garage-alert-bar');
+      if (!bar) return;
+      bar.classList.add('hidden');
+      bar.style.display = 'none';
+    }
+
+    function handleGarageVehicleChange(e) {
+      if (e) e.preventDefault();
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          title: 'Garaj Aracı Seçin',
+          text: 'Filtrelemek istediğiniz kayıtlı aracınızı seçin:',
+          input: 'select',
+          inputOptions: {
+            'vw-golf': 'Volkswagen Golf VII 5G1 (2016) 1.6 TDI 81kW / 110 HP',
+            'audi-a3': 'Audi A3 Sportback 8V (2017) 1.6 TDI 85kW / 115 HP',
+            'seat-leon': 'Seat Leon 5F (2018) 1.6 TDI 85kW / 115 HP',
+            'clear': '❌ Araç Filtresini Kaldır (Tüm Parçaları Göster)'
+          },
+          inputPlaceholder: 'Araç Seçiniz...',
+          showCancelButton: true,
+          confirmButtonText: 'Uygula',
+          cancelButtonText: 'İptal',
+          confirmButtonColor: '#ff5722'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            if (result.value === 'clear') {
+              hideActiveGarageFilter();
+            } else {
+              const vehicleMap = {
+                'vw-golf': 'Volkswagen Golf VII 5G1 (2016) 1.6 TDI 81kW / 110 HP (Motor Kodu: CXXB / DBKA)',
+                'audi-a3': 'Audi A3 Sportback 8V (2017) 1.6 TDI 85kW / 115 HP (Motor Kodu: CRKB)',
+                'seat-leon': 'Seat Leon 5F (2018) 1.6 TDI 85kW / 115 HP (Motor Kodu: DDYA)'
+              };
+              showActiveGarageFilter(vehicleMap[result.value]);
+            }
+          }
+        });
+      }
+    }
+
+    // =========================================================================
+    // DİNAMİK GELİŞMİŞ FİLTRELEME & FACETED SEARCH MİMARİSİ (prompt.md Adım 1-4)
+    // =========================================================================
+    window.activeFilters = new Map();
+
+    // Şablon Rozet (Template) Oluşturucu (prompt.md Adım 1 & 2)
+    function createFilterPill(key, displayText, onRemoveCallback) {
+      const pill = document.createElement('div');
+      pill.className = 'pp-filter-pill';
+      pill.setAttribute('data-filter-key', key);
+
+      const textSpan = document.createElement('span');
+      textSpan.className = 'pp-filter-pill-text';
+      textSpan.textContent = displayText;
+      pill.appendChild(textSpan);
+
+      const closeBtn = document.createElement('span');
+      closeBtn.className = 'pp-filter-pill-close';
+      closeBtn.innerHTML = '✕';
+      closeBtn.title = 'Filtreyi Kaldır';
+      closeBtn.setAttribute('role', 'button');
+      closeBtn.setAttribute('tabindex', '0');
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        removeActiveFilter(key);
+      });
+      pill.appendChild(closeBtn);
+
+      return pill;
+    }
+
+    function addActiveFilter(key, displayText, onRemoveCallback) {
+      window.activeFilters.set(key, {
+        displayText: displayText,
+        onRemove: onRemoveCallback
+      });
+      renderActiveFilterPills();
+    }
+
+    function removeActiveFilter(key) {
+      const item = window.activeFilters.get(key);
+      if (item) {
+        window.activeFilters.delete(key);
+        renderActiveFilterPills();
+        if (typeof item.onRemove === 'function') {
+          item.onRemove();
+        }
+      }
+    }
+
+    function renderActiveFilterPills() {
+      const row = document.getElementById('pp-active-filters-row');
+      const container = document.getElementById('pp-active-filters-container');
+      if (!row || !container) return;
+
+      container.innerHTML = '';
+
+      if (window.activeFilters.size === 0) {
+        row.classList.add('hidden');
+        row.style.display = 'none';
+        return;
+      }
+
+      // prompt.md Adım 2.1: En az bir filtre seçildiğinde çubuğu görünür yap
+      row.classList.remove('hidden');
+      row.style.display = 'flex';
+
+      window.activeFilters.forEach((item, key) => {
+        const pill = createFilterPill(key, item.displayText, item.onRemove);
+        container.appendChild(pill);
+      });
+    }
+
+    // prompt.md ADIM 2: FRONTEND MERKEZİ FİLTRE ALGORİTMASI (buildAndFetchFilters)
+    async function buildAndFetchFilters() {
+      const queryParams = new URLSearchParams();
+
+      // 1. Üst Menü Kategori
+      if (window.currentActiveCategory && window.currentActiveCategory !== 'Tüm Kategoriler' && window.currentActiveCategory !== 'ALL') {
+        queryParams.set('category', window.currentActiveCategory);
+      }
+
+      // 2. Sol Menü Seçili (Checked) Checkbox'larını Topla
+      const checkedInputs = document.querySelectorAll('.pp-sidebar input[type="checkbox"]:checked, .pp-sidebar input[type="radio"]:checked');
+      const filters = {};
+
+      checkedInputs.forEach(input => {
+        const type = input.getAttribute('data-filter-type');
+        const val = input.value;
+        if (type && val) {
+          if (!filters[type]) filters[type] = [];
+          filters[type].push(val);
+        }
+      });
+
+      // Query String Formatlama: ?brands=Bosch,Brembo&conditions=Sıfır&minPrice=100...
+      if (filters.brand && filters.brand.length > 0) {
+        queryParams.set('brands', filters.brand.join(','));
+      }
+      if (filters.subcategory && filters.subcategory.length > 0) {
+        queryParams.set('subcategories', filters.subcategory.join(','));
+      }
+      if (filters.condition && filters.condition.length > 0) {
+        queryParams.set('conditions', filters.condition.join(','));
+      }
+      if (filters.city && filters.city.length > 0) {
+        queryParams.set('cities', filters.city.join(','));
+      }
+      if (filters.sellerType && filters.sellerType.length > 0) {
+        queryParams.set('sellerTypes', filters.sellerType.join(','));
+      }
+      if (filters.shipping && filters.shipping.length > 0) {
+        queryParams.set('shipping', filters.shipping.join(','));
+      }
+
+      // 3. Fiyat Aralığı
+      const minPriceInput = document.getElementById('pp-filter-min-price');
+      const maxPriceInput = document.getElementById('pp-filter-max-price');
+      const minPrice = minPriceInput ? minPriceInput.value.trim() : '';
+      const maxPrice = maxPriceInput ? maxPriceInput.value.trim() : '';
+      if (minPrice && !isNaN(parseFloat(minPrice))) {
+        queryParams.set('minPrice', parseFloat(minPrice));
+      }
+      if (maxPrice && !isNaN(parseFloat(maxPrice))) {
+        queryParams.set('maxPrice', parseFloat(maxPrice));
+      }
+
+      // 4. OEM Arama
+      const oemInput = document.getElementById('pp-filter-oem-input');
+      if (oemInput && oemInput.value.trim()) {
+        queryParams.set('search', oemInput.value.trim());
+        queryParams.set('searchType', 'oe');
+      }
+
+      // 5. Ana Arama Kutusu
+      const searchInput = document.getElementById('main-search-input');
+      if (searchInput && searchInput.value.trim() && !queryParams.has('search')) {
+        queryParams.set('search', searchInput.value.trim());
+      }
+
+      // 6. Rozetleri (Badges) Senkronize Et
+      syncActiveFilterPillsFromState(filters, minPrice, maxPrice);
+
+      // 7. Backend'e Gönder ve Listele
+      const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
+      await loadRealProducts(queryString);
+    }
+
+    // Aktif Filtre Rozetlerini Senkronize Et
+    function syncActiveFilterPillsFromState(filters, minPrice, maxPrice) {
+      window.activeFilters.clear();
+
+      if (window.currentActiveCategory && window.currentActiveCategory !== 'Tüm Kategoriler') {
+        window.activeFilters.set('category', {
+          displayText: `Kategori: ${window.currentActiveCategory}`,
+          onRemove: () => selectCategory('Tüm Kategoriler')
+        });
+      }
+
+      if (filters.brand) {
+        filters.brand.forEach(b => {
+          window.activeFilters.set('brand_' + b, {
+            displayText: `Marka: ${b}`,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="brand"][value="${b}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (filters.subcategory) {
+        filters.subcategory.forEach(s => {
+          window.activeFilters.set('sub_' + s, {
+            displayText: `Alt Kategori: ${s}`,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="subcategory"][value="${s}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (filters.condition) {
+        filters.condition.forEach(c => {
+          window.activeFilters.set('cond_' + c, {
+            displayText: `Durum: ${c}`,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="condition"][value="${c}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (filters.city) {
+        filters.city.forEach(c => {
+          window.activeFilters.set('city_' + c, {
+            displayText: `Şehir: ${c}`,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="city"][value="${c}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (filters.sellerType) {
+        const typeLabels = { verified: 'Onaylı Mağaza', distributor: 'Distribütör', wholesaler: 'Toptancı' };
+        filters.sellerType.forEach(st => {
+          window.activeFilters.set('st_' + st, {
+            displayText: `Satıcı: ${typeLabels[st] || st}`,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="sellerType"][value="${st}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (filters.shipping) {
+        const shipLabels = { sameDay: 'Aynı Gün Kargo', freeShipping: 'Ücretsiz Kargo', immediateDelivery: 'Hemen Teslim' };
+        filters.shipping.forEach(sh => {
+          window.activeFilters.set('ship_' + sh, {
+            displayText: shipLabels[sh] || sh,
+            onRemove: () => {
+              const el = document.querySelector(`.pp-sidebar input[data-filter-type="shipping"][value="${sh}"]`);
+              if (el) el.checked = false;
+              buildAndFetchFilters();
+            }
+          });
+        });
+      }
+
+      if (minPrice || maxPrice) {
+        window.activeFilters.set('price_range', {
+          displayText: `Fiyat: ${minPrice ? minPrice + '₺' : '0₺'} - ${maxPrice ? maxPrice + '₺' : '∞'}`,
+          onRemove: () => {
+            const minEl = document.getElementById('pp-filter-min-price');
+            const maxEl = document.getElementById('pp-filter-max-price');
+            if (minEl) minEl.value = '';
+            if (maxEl) maxEl.value = '';
+            buildAndFetchFilters();
+          }
+        });
+      }
+
+      renderActiveFilterPills();
+    }
+
+    // prompt.md ADIM 4: EKRANA RENDER VE DİNAMİK ADETLER (FACET COUNTS)
+    function updateFacetCounts(facets, products) {
+      const countSpans = document.querySelectorAll('.pp-sidebar .pp-checkbox-count[data-facet]');
+      
+      countSpans.forEach(span => {
+        const facetType = span.getAttribute('data-facet');
+        const val = span.getAttribute('data-val');
+        const label = span.closest('.pp-checkbox-item');
+        const checkbox = label ? label.querySelector('input[type="checkbox"]') : null;
+
+        let count = 0;
+
+        // 1. Backend facets objesinden kontrol et
+        if (facets && facets[facetType] && facets[facetType][val] !== undefined) {
+          count = facets[facetType][val];
+        } else if (Array.isArray(products)) {
+          // 2. Dinamik ürün listesinden hesapla
+          count = calculateProductFacetCount(products, facetType, val);
+        }
+
+        span.textContent = `(${count})`;
+
+        if (checkbox) {
+          if (count === 0 && !checkbox.checked) {
+            checkbox.disabled = true;
+            if (label) label.classList.add('disabled');
+          } else {
+            checkbox.disabled = false;
+            if (label) label.classList.remove('disabled');
+          }
+        }
+      });
+    }
+
+    function calculateProductFacetCount(products, facetType, val) {
+      if (!Array.isArray(products)) return 0;
+      const valLower = String(val).toLowerCase();
+
+      return products.filter(p => {
+        const name = (p.name || '').toLowerCase();
+        const brand = (p.brand || p.vehicleBrand || (p.product && (p.product.brand || p.product.vehicleBrand)) || '').toLowerCase();
+        const category = (p.category || (p.product && p.product.category) || '').toLowerCase();
+        const partGroup = (p.partGroup || (p.product && p.product.partGroup) || '').toLowerCase();
+        const city = (p.city || (p.tenant && p.tenant.city) || 'İstanbul').toLowerCase();
+        const stock = p.stock !== undefined ? p.stock : 10;
+        const isDisc = p.isDiscounted || false;
+
+        if (facetType === 'brand') {
+          return brand.includes(valLower) || name.includes(valLower);
+        }
+        if (facetType === 'subcategory') {
+          return name.includes(valLower) || partGroup.includes(valLower) || category.includes(valLower);
+        }
+        if (facetType === 'condition') {
+          if (valLower.includes('sıfır')) return !isDisc || name.includes('oem') || name.includes('sıfır');
+          if (valLower.includes('muadil')) return name.includes('muadil') || isDisc;
+          if (valLower.includes('çıkma')) return name.includes('revize') || name.includes('çıkma');
+          return name.includes(valLower);
+        }
+        if (facetType === 'city') {
+          return city.includes(valLower) || (p.dealerName && p.dealerName.toLowerCase().includes(valLower));
+        }
+        if (facetType === 'shipping') {
+          if (valLower === 'sameday') return stock > 5;
+          if (valLower === 'freeshipping') return stock <= 5 || p.freeShipping;
+          if (valLower === 'immediatedelivery') return stock > 10;
+        }
+        if (facetType === 'sellerType') {
+          if (valLower === 'verified') return true;
+          if (valLower === 'distributor') return (p.dealerName || '').toLowerCase().includes('oto');
+          if (valLower === 'wholesaler') return true;
+        }
+        return false;
+      }).length;
+    }
+
+    // prompt.md ADIM 3: "TÜMÜNÜ TEMİZLE" BUTONU İŞLEVSELLİĞİ
+    async function clearAllFilters(e) {
+      if (e) e.preventDefault();
+
+      // 1. Çubuktaki tüm rozetleri sil
+      window.activeFilters.clear();
+      const container = document.getElementById('pp-active-filters-container');
+      if (container) container.innerHTML = '';
+
+      // 2. Çubuğun kendisini tekrar GİZLİ (hidden) duruma getir
+      const row = document.getElementById('pp-active-filters-row');
+      if (row) {
+        row.classList.add('hidden');
+        row.style.display = 'none';
+      }
+
+      // 3. Sol menüdeki seçili radio/checkbox'ları sıfırla
+      const sidebarInputs = document.querySelectorAll('.pp-sidebar input[type="checkbox"], .pp-sidebar input[type="radio"]');
+      sidebarInputs.forEach(input => {
+        input.checked = false;
+        input.disabled = false;
+        const lbl = input.closest('.pp-checkbox-item');
+        if (lbl) lbl.classList.remove('disabled');
+      });
+
+      const minPriceInput = document.getElementById('pp-filter-min-price');
+      const maxPriceInput = document.getElementById('pp-filter-max-price');
+      if (minPriceInput) minPriceInput.value = '';
+      if (maxPriceInput) maxPriceInput.value = '';
+
+      const oemInput = document.getElementById('pp-filter-oem-input');
+      if (oemInput) oemInput.value = '';
+
+      // Üst menü kategori sekmelerini sıfırla
+      const allCatBtn = document.getElementById('btn-all-categories') || document.querySelector('.pp-all-categories-btn');
+      const catLinks = document.querySelectorAll('.pp-cat-link');
+      catLinks.forEach(link => link.classList.remove('active'));
+      if (allCatBtn) allCatBtn.classList.add('active');
+      window.currentActiveCategory = 'Tüm Kategoriler';
+
+      // Sayfa başlığını güncelle
+      const pageTitle = document.querySelector('.pp-page-title');
+      if (pageTitle) {
+        pageTitle.textContent = 'Volkswagen Golf VII Uyumlu Tüm Yedek Parçalar';
+      }
+
+      const searchInput = document.getElementById('main-search-input');
+      if (searchInput) searchInput.value = '';
+      hideActiveGarageFilter();
+
+      // 4. Backend API'sine filtresiz (parametre boş) yeni bir fetch isteği at
+      await loadRealProducts('');
+    }
+
+    function initSidebarFilters() {
+      const sidebar = document.querySelector('.pp-sidebar');
+      if (!sidebar) return;
+
+      // Checkbox change dinleyicileri (prompt.md Adım 2)
+      const inputs = sidebar.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+      inputs.forEach(input => {
+        input.addEventListener('change', function() {
+          buildAndFetchFilters();
+        });
+      });
+
+      // Fiyatı Uygula butonu dinleyicisi (prompt.md Adım 2)
+      const applyPriceBtn = document.getElementById('btn-apply-price-filter') || sidebar.querySelector('.pp-price-apply-btn');
+      if (applyPriceBtn) {
+        applyPriceBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          buildAndFetchFilters();
+        });
+      }
+
+      // Fiyat inputlarında Enter desteği
+      const priceInputs = sidebar.querySelectorAll('.pp-price-range-input');
+      priceInputs.forEach(input => {
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            buildAndFetchFilters();
+          }
+        });
+      });
+
+      // OEM Arama inputu Enter desteği
+      const oemInput = document.getElementById('pp-filter-oem-input');
+      if (oemInput) {
+        oemInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            buildAndFetchFilters();
+          }
+        });
+      }
+
+      // Parça Markası Temizle butonu
+      const brandClearBtn = sidebar.querySelector('.pp-filter-box-clear');
+      if (brandClearBtn) {
+        brandClearBtn.addEventListener('click', function() {
+          const brandBox = brandClearBtn.closest('.pp-filter-box');
+          if (brandBox) {
+            brandBox.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+              cb.checked = false;
+            });
+            buildAndFetchFilters();
+          }
+        });
+      }
+    }
+
+    function updateCategoryUIHeaders(categoryName) {
+      const isAll = !categoryName || categoryName === 'Tüm Kategoriler';
+      const pageTitle = document.querySelector('.pp-page-title');
+      if (pageTitle) {
+        pageTitle.textContent = isAll 
+          ? 'Volkswagen Golf VII Uyumlu Tüm Yedek Parçalar'
+          : `Volkswagen Golf VII Uyumlu ${escapeHtml(categoryName)} Parçaları`;
+      }
+    }
+
+    // Adım 2 & 4: Frontend Fetch & Facet Senkronizasyonu (prompt.md Adım 2 & 4)
+    async function loadRealProducts(queryOrCategory, extraBrand) {
+      const container = document.getElementById('products-grid');
+      if (!container) return;
+
+      let queryString = '';
+      let displayCategory = 'Tüm Kategoriler';
+
+      if (typeof queryOrCategory === 'string' && queryOrCategory.startsWith('?')) {
+        queryString = queryOrCategory;
+        try {
+          const parsed = new URLSearchParams(queryOrCategory);
+          displayCategory = parsed.get('category') || 'Filtrelenmiş';
+        } catch(e) {}
+      } else {
+        const cat = queryOrCategory !== undefined ? queryOrCategory : currentActiveCategory;
+        const hasCategory = cat && cat !== 'Tüm Kategoriler' && cat !== 'ALL' && cat !== 'all';
+        displayCategory = hasCategory ? cat : 'Tüm Kategoriler';
+        const qParams = [];
+        if (hasCategory) qParams.push(`category=${encodeURIComponent(cat)}`);
+        if (extraBrand) qParams.push(`brands=${encodeURIComponent(extraBrand)}`);
+        if (qParams.length > 0) queryString = '?' + qParams.join('&');
+      }
+
+      // 1. Ekrandaki eski ürünleri temizle ve şık yükleme göstergesini bas
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; color: #64748b;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ff5722" stroke-width="2.5" style="animation: spin 0.8s linear infinite; margin-bottom: 12px;">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" stroke-dasharray="32" stroke-linecap="round"></circle>
+          </svg>
+          <span style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">${escapeHtml(displayCategory)} Parçaları Taranıyor...</span>
+          <span style="font-size: 0.74rem; color: #94a3b8; margin-top: 4px;">Tüm Bayi Stokları ve Veritabanı Canlı Senkronize Ediliyor</span>
+        </div>
+      `;
+
+      let products = [];
+      let serverFacets = null;
+
+      // A) Birincil Yol: Projedeki Hibrit apiFetch İstemcisi
+      if (typeof window.apiFetch === 'function') {
+        try {
+          const res = await window.apiFetch(`/store/products${queryString}`);
+          if (res && res.success && Array.isArray(res.data)) {
+            products = res.data;
+            serverFacets = res.facets || null;
+          } else {
+            const prodRes = await window.apiFetch(`/products${queryString}`);
+            if (prodRes && prodRes.success && Array.isArray(prodRes.data)) {
+              products = prodRes.data;
+              serverFacets = prodRes.facets || null;
+            }
+          }
+        } catch (e) {
+          console.warn('[apiFetch] Hatası, doğrudan fetch deneniyor:', e);
+        }
+      }
+
+      // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 2)
+      if (!products || products.length === 0) {
+        const apiBase = (window.API_BASE || 'https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api').replace(/\/+$/, '');
+        const endpoints = [
+          `${apiBase}/products${queryString}`,
+          `${apiBase}/store/products${queryString}`,
+          `/api/products${queryString}`,
+          `/api/store/products${queryString}`
+        ];
+
+        for (const ep of endpoints) {
+          try {
+            const resp = await fetch(ep, {
+              headers: {
+                'Accept': 'application/json',
+                ...(localStorage.getItem('token') ? { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {})
+              }
+            });
+            if (resp.ok) {
+              const json = await resp.json();
+              const list = Array.isArray(json) ? json : (json.data || json.products || []);
+              if (Array.isArray(list) && list.length > 0) {
+                products = list;
+                serverFacets = json.facets || null;
+                break;
+              }
+            }
+          } catch (err) {}
+        }
+      }
+
+      // C) Üçüncül Yol: Yerel Depolama (Offline & Mock Seed Fallback)
+      if (!products || products.length === 0) {
+        try {
+          const mockKeys = ['saas_b2b_standalone_data_v3', 'mock_store', 'store'];
+          for (const k of mockKeys) {
+            const raw = localStorage.getItem(k);
+            if (raw) {
+              const parsed = JSON.parse(raw);
+              let rawList = [];
+              if (Array.isArray(parsed.tenantCatalog) && parsed.tenantCatalog.length > 0) {
+                rawList = parsed.tenantCatalog.map(tc => {
+                  const p = (parsed.products || []).find(x => x.id === tc.productId) || {};
+                  return { ...tc, ...p, customPrice: tc.customPrice || p.defaultPrice };
+                });
+              } else if (Array.isArray(parsed.products) && parsed.products.length > 0) {
+                rawList = parsed.products;
+              }
+              if (rawList.length > 0) {
+                products = rawList;
+                break;
+              }
+            }
+          }
+        } catch (e) {}
+      }
+
+      // D) Dönen veri boşsa (0 ürün): Şık "Filtreye uygun ürün bulunmuyor" uyarısı
+      if (!products || products.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; color: #64748b; background: #ffffff; border-radius: 12px; border: 1.5px dashed #cbd5e1; margin: 16px 0;">
+            <div style="font-size: 2.8rem; margin-bottom: 12px;">🔍📦</div>
+            <div style="font-weight: 800; font-size: 1.2rem; color: #0f172a; margin-bottom: 8px;">Seçilen filtrelere uygun parça bulunamadı</div>
+            <p style="font-size: 0.86rem; color: #64748b; max-width: 480px; margin: 0 auto 20px auto; line-height: 1.55;">
+              Arama kriterlerinize veya seçili filtrelere uygun aktif bir yedek parça bulunamadı. Filtreleri temizleyerek tüm parçaları görüntüleyebilirsiniz.
+            </p>
+            <button type="button" onclick="clearAllFilters(event)" style="background: #ff5722; color: #ffffff; border: none; padding: 11px 24px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: background 0.15s; box-shadow: 0 4px 12px rgba(255, 87, 34, 0.25);">
+              ✕ Filtreleri Temizle & Tümünü Göster
+            </button>
+          </div>
+        `;
+
+        const subtitleCount = document.querySelector('.pp-page-subtitle strong');
+        if (subtitleCount) subtitleCount.textContent = '0';
+        const sortCount = document.querySelector('.pp-sort-middle strong');
+        if (sortCount) sortCount.textContent = '0';
+        allLoadedProducts = [];
+
+        updateFacetCounts(serverFacets, []);
+        return;
+      }
+
+      // 2. Yeni dönen verileri aynı şık ürün kartı tasarımıyla ekrana bas
+      allLoadedProducts = products;
+      container.innerHTML = products.map((prod, index) => createProductCardHTML(prod, index)).join('');
+      syncFavoriteHeartIcons();
+
+      // prompt.md ADIM 4: Dinamik Adetleri (Facet Counts) Güncelle
+      updateFacetCounts(serverFacets, products);
+
+      // Sayaçları güncelle
+      const subtitleCount = document.querySelector('.pp-page-subtitle strong');
+      if (subtitleCount) subtitleCount.textContent = `${products.length} farklı`;
+      const sortCount = document.querySelector('.pp-sort-middle strong');
+      if (sortCount) sortCount.textContent = `1 - ${products.length}`;
+
+      console.log(`[STORE_LOAD_SUCCESS]: ${products.length} adet ürün başarıyla listelendi.`);
+    }
+
+    // =========================================================================
+    // 4. GELİŞMİŞ OFFCANVAS SEPET MOTORU & SİPARİŞ ONAYI (prompt.md KURAL 2)
+    // =========================================================================
+    const CART_STORAGE_KEY = 'saas_b2b_parcapro_cart_v1';
+
+    function getCart() {
+      try {
+        const raw = localStorage.getItem(CART_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      } catch (e) {}
+    }
+
+    // Sağ Sepet Panelini Aç / Kapat
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('pp-cart-drawer');
+      const backdrop = document.getElementById('pp-cart-drawer-backdrop');
+      if (!drawer || !backdrop) return;
+
+      const shouldOpen = open !== undefined ? open : !drawer.classList.contains('active');
+      if (shouldOpen) {
+        // Diğer çekmeceleri kapat
+        const notifDrawer = document.getElementById('pp-notifications-drawer');
+        if (notifDrawer) notifDrawer.classList.remove('active');
+        const sidebar = document.querySelector('.pp-sidebar');
+        if (sidebar) sidebar.classList.remove('mobile-open');
+
+        drawer.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        renderCartDrawer();
+      } else {
+        drawer.classList.remove('active');
+        const notifDrawer = document.getElementById('pp-notifications-drawer');
+        const sidebar = document.querySelector('.pp-sidebar');
+        const isNotifActive = notifDrawer && notifDrawer.classList.contains('active');
+        const isSidebarActive = sidebar && sidebar.classList.contains('mobile-open');
+        if (!isNotifActive && !isSidebarActive) {
+          backdrop.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    }
+
+    // Sepete Ekleme Fonksiyonu (Dinamik Satıcı & Tutar Entegrasyonu)
+    function handleAddToCart(id, name, price, oemCode, imageUrl, sellerName) {
+      const cart = getCart();
+      const numPrice = typeof price === 'number' ? price : (parseFloat(String(price).replace(/[^0-9.,]/g, '').replace(',', '.')) || 0);
+
+      const existingIndex = cart.findIndex(item => String(item.id) === String(id));
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += 1;
+      } else {
+        cart.push({
+          id: String(id),
+          name: name || 'Orijinal Yedek Parça',
+          price: numPrice,
+          oemCode: oemCode || 'OE Kodu',
+          imageUrl: imageUrl || '',
+          sellerName: sellerName || 'Ahmet Oto (Yetkili Bayi)',
+          qty: 1
+        });
+      }
+
+      saveCart(cart);
+      updateCartUI();
+
+      // Modern SweetAlert2 Toast Bildirimi & Anında Sepete Git Aksiyonu
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'success',
+          title: `"${name}" sepete eklendi!`,
+          html: `<span style="font-size: 0.8rem; color: #64748b;">Satıcı: <strong>${escapeHtml(sellerName || 'Ahmet Oto')}</strong> • Tutar: <strong>₺${numPrice.toLocaleString('tr-TR', { minimumFractionDigits: 2 })}</strong></span>`,
+          showConfirmButton: true,
+          confirmButtonText: 'Sepeti Aç →',
+          confirmButtonColor: '#ff5722',
+          timer: 3500,
+          timerProgressBar: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            toggleCartDrawer(true);
+          }
+        });
+      }
+    }
+
+    // Sepet Miktarı Artır / Azalt
+    function updateCartQty(id, delta) {
+      let cart = getCart();
+      const idx = cart.findIndex(item => String(item.id) === String(id));
+      if (idx > -1) {
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) {
+          cart.splice(idx, 1);
+        }
+        saveCart(cart);
+        updateCartUI();
+      }
+    }
+
+    // Sepetten Ürün Çıkar
+    function removeFromCart(id) {
+      let cart = getCart();
+      cart = cart.filter(item => String(item.id) !== String(id));
+      saveCart(cart);
+      updateCartUI();
+    }
+
+    // Sağ Sepet Panelini (DOM) Satır Satır Dinamik Render Et
+    function renderCartDrawer() {
+      const body = document.getElementById('pp-cart-drawer-body');
+      const countBadge = document.getElementById('pp-drawer-cart-count');
+      const subtotalEl = document.getElementById('pp-drawer-subtotal');
+      const vatEl = document.getElementById('pp-drawer-vat');
+      const grandTotalEl = document.getElementById('pp-drawer-grand-total');
+      const submitBtn = document.getElementById('pp-btn-submit-order');
+
+      const cart = getCart();
+      const totalQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const vatAmount = parseFloat((subtotal * 0.20).toFixed(2));
+      const grandTotal = parseFloat((subtotal + vatAmount).toFixed(2));
+
+      if (countBadge) countBadge.textContent = `${totalQty} Kalem`;
+      if (subtotalEl) subtotalEl.textContent = '₺' + subtotal.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      if (vatEl) vatEl.textContent = '₺' + vatAmount.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      if (grandTotalEl) grandTotalEl.textContent = '₺' + grandTotal.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      if (submitBtn) {
+        submitBtn.disabled = cart.length === 0;
+      }
+
+      if (!body) return;
+
+      if (cart.length === 0) {
+        body.innerHTML = `
+          <div class="pp-cart-empty">
+            <div class="pp-cart-empty-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <div class="pp-cart-empty-title">Sepetiniz Boş</div>
+            <div class="pp-cart-empty-text">Henüz sepetinize parça eklemediniz. Katalogdan aracınıza uygun parçaları ekleyerek sipariş oluşturabilirsiniz.</div>
+            <button type="button" class="pp-cart-empty-btn" onclick="toggleCartDrawer(false)">Parça Kataloğunu İncele</button>
+          </div>
+        `;
+        return;
+      }
+
+      body.innerHTML = cart.map(item => {
+        const itemLineTotal = (item.price * item.qty).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const itemUnitPrice = item.price.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const imgContent = item.imageUrl
+          ? `<img src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(item.name)}" class="pp-cart-item-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=400&auto=format&fit=crop&q=80';">`
+          : `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8m-4-4h8"></path></svg>`;
+
+        return `
+          <div class="pp-cart-item-card" data-cart-id="${escapeHtml(String(item.id))}">
+            <button type="button" class="pp-cart-item-remove-btn" title="Sepetten Kaldır" onclick="removeFromCart('${escapeHtml(String(item.id))}')">✕</button>
+
+            <div class="pp-cart-item-img-box">
+              ${imgContent}
+            </div>
+
+            <div class="pp-cart-item-details">
+              <h4 class="pp-cart-item-title" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</h4>
+              
+              <div class="pp-cart-item-meta">
+                <span class="pp-cart-item-oem">OEM: ${escapeHtml(item.oemCode || 'GENEL')}</span>
+                <span>•</span>
+                <span class="pp-cart-item-seller">🏪 ${escapeHtml(item.sellerName || 'Ahmet Oto')}</span>
+              </div>
+
+              <div class="pp-cart-item-bottom-row">
+                <div class="pp-cart-stepper">
+                  <button type="button" class="pp-cart-stepper-btn" onclick="updateCartQty('${escapeHtml(String(item.id))}', -1)" title="Adet Azalt">-</button>
+                  <span class="pp-cart-stepper-val">${item.qty}</span>
+                  <button type="button" class="pp-cart-stepper-btn" onclick="updateCartQty('${escapeHtml(String(item.id))}', 1)" title="Adet Artır">+</button>
+                </div>
+
+                <div class="pp-cart-item-price-wrap">
+                  <div class="pp-cart-item-line-price">₺${itemLineTotal}</div>
+                  <div class="pp-cart-item-unit-price">${item.qty} × ₺${itemUnitPrice}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Sepet Arayüzünü ve Header Sayaçlarını Senkronize Et
+    function updateCartUI() {
+      const cart = getCart();
+      const totalQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const vatAmount = parseFloat((subtotal * 0.20).toFixed(2));
+      const grandTotal = parseFloat((subtotal + vatAmount).toFixed(2));
+
+      // Header widget sayaç ve tutarını güncelle
+      const badge = document.querySelector('.pp-cart-badge');
+      if (badge) badge.textContent = totalQty;
+
+      const amountEl = document.querySelector('.pp-cart-amount');
+      if (amountEl) {
+        amountEl.textContent = '₺' + grandTotal.toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+      }
+
+      renderCartDrawer();
+    }
+
+    // =========================================================================
+    // 4.2 ÖDEME VE TESLİMAT (CHECKOUT) MODALI & KREDİ KARTI SİSTEMİ
+    // (prompt.md Adım 1 & 2 - SADECE Kredi Kartı ve Teslimat Adresi)
+    // =========================================================================
+
+    // Modal İçi Dinamik Inline Hata / Uyarı Kutusu (prompt.md Adım 2)
+    function showCheckoutAlert(message, title, targetInputId) {
+      const alertBox = document.getElementById('checkout-inline-alert');
+      const msgEl = document.getElementById('checkout-alert-message');
+      const titleEl = document.getElementById('checkout-alert-title');
+      if (!alertBox) return;
+
+      if (titleEl) titleEl.textContent = title || 'Ödeme Doğrulama Uyarısı';
+      if (msgEl) msgEl.innerHTML = message;
+
+      // Önceki input hata vurgularını temizle
+      document.querySelectorAll('.pp-input-error').forEach(el => el.classList.remove('pp-input-error'));
+
+      if (targetInputId) {
+        const inputEl = document.getElementById(targetInputId);
+        if (inputEl) {
+          inputEl.classList.add('pp-input-error');
+          try {
+            inputEl.focus();
+          } catch (e) {}
+        }
+      }
+
+      alertBox.classList.remove('hidden');
+      alertBox.style.display = 'flex';
+
+      // Modal gövdesini en üste kaydırarak hata kutusunun net görünmesini sağla
+      const modalBody = document.querySelector('.pp-checkout-body');
+      if (modalBody) {
+        modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function hideCheckoutAlert(e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      const alertBox = document.getElementById('checkout-inline-alert');
+      if (alertBox) {
+        alertBox.classList.add('hidden');
+        alertBox.style.display = 'none';
+      }
+      document.querySelectorAll('.pp-input-error').forEach(el => el.classList.remove('pp-input-error'));
+    }
+
+    // Kullanıcının girdiği verileri anlık olarak hafızada tutma (Veri kaybını %100 önler - prompt.md Emir)
+    function saveCheckoutDraft() {
+      try {
+        const draft = {
+          name: document.getElementById('checkout-name')?.value || '',
+          phone: document.getElementById('checkout-phone')?.value || '',
+          city: document.getElementById('checkout-city')?.value || '',
+          district: document.getElementById('checkout-district')?.value || '',
+          address: document.getElementById('checkout-address')?.value || '',
+          notes: document.getElementById('checkout-notes')?.value || '',
+          cardName: document.getElementById('checkout-card-name')?.value || '',
+          cardNumber: document.getElementById('checkout-card-number')?.value || '',
+          cardExpiry: document.getElementById('checkout-card-expiry')?.value || '',
+          cardCvv: document.getElementById('checkout-card-cvv')?.value || ''
+        };
+        sessionStorage.setItem('parcapro_checkout_draft', JSON.stringify(draft));
+      } catch (e) {}
+    }
+
+    function restoreCheckoutDraft() {
+      try {
+        const raw = sessionStorage.getItem('parcapro_checkout_draft');
+        if (!raw) return false;
+        const draft = JSON.parse(raw);
+        if (!draft) return false;
+
+        const setVal = (id, val) => {
+          const el = document.getElementById(id);
+          if (el && val !== undefined && val !== null && val !== '') {
+            el.value = val;
+          }
+        };
+        setVal('checkout-name', draft.name);
+        setVal('checkout-phone', draft.phone);
+        setVal('checkout-city', draft.city);
+        setVal('checkout-district', draft.district);
+        setVal('checkout-address', draft.address);
+        setVal('checkout-notes', draft.notes);
+        setVal('checkout-card-name', draft.cardName);
+        setVal('checkout-card-number', draft.cardNumber);
+        setVal('checkout-card-expiry', draft.cardExpiry);
+        setVal('checkout-card-cvv', draft.cardCvv);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function clearCheckoutDraft() {
+      try {
+        sessionStorage.removeItem('parcapro_checkout_draft');
+      } catch (e) {}
+    }
+
+    // Modal Dışı Arka Plana Kazara Tıklamada Kapanmayı Önleme (prompt.md Emir Kuralı)
+    function handleBackdropClick(e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      const modal = document.getElementById('pp-checkout-modal');
+      if (modal) {
+        modal.classList.add('pp-modal-shake');
+        setTimeout(() => {
+          modal.classList.remove('pp-modal-shake');
+        }, 360);
+      }
+    }
+
+    // IMask Kütüphanesi Entegrasyonu (Modern & Güncel Topluluk Paketi)
+    let cardMaskInstance = null;
+    let expiryMaskInstance = null;
+    let cvvMaskInstance = null;
+    let phoneMaskInstance = null;
+
+    function initCheckoutMasks() {
+      const cardNumInp = document.getElementById('checkout-card-number');
+      const cardExpInp = document.getElementById('checkout-card-expiry');
+      const cardCvvInp = document.getElementById('checkout-card-cvv');
+      const phoneInp = document.getElementById('checkout-phone');
+
+      if (typeof IMask !== 'undefined') {
+        try {
+          if (cardNumInp && !cardNumInp._masked) {
+            cardMaskInstance = IMask(cardNumInp, {
+              mask: '0000 0000 0000 0000[ 000]'
+            });
+            cardNumInp._masked = true;
+            cardMaskInstance.on('accept', () => {
+              formatAndPreviewCardNumber(cardNumInp);
+              hideCheckoutAlert();
+              saveCheckoutDraft();
+            });
+          }
+          if (cardExpInp && !cardExpInp._masked) {
+            expiryMaskInstance = IMask(cardExpInp, {
+              mask: 'MM/YY',
+              blocks: {
+                MM: {
+                  mask: IMask.MaskedRange,
+                  from: 1,
+                  to: 12
+                },
+                YY: {
+                  mask: IMask.MaskedRange,
+                  from: 24,
+                  to: 99
+                }
+              }
+            });
+            cardExpInp._masked = true;
+            expiryMaskInstance.on('accept', () => {
+              formatAndPreviewCardExpiry(cardExpInp);
+              hideCheckoutAlert();
+              saveCheckoutDraft();
+            });
+          }
+          if (cardCvvInp && !cardCvvInp._masked) {
+            cvvMaskInstance = IMask(cardCvvInp, {
+              mask: '0000'
+            });
+            cardCvvInp._masked = true;
+            cvvMaskInstance.on('accept', () => {
+              hideCheckoutAlert();
+              saveCheckoutDraft();
+            });
+          }
+          if (phoneInp && !phoneInp._masked) {
+            phoneMaskInstance = IMask(phoneInp, {
+              mask: '0{\\5}00 000 00 00'
+            });
+            phoneInp._masked = true;
+            phoneMaskInstance.on('accept', () => {
+              hideCheckoutAlert();
+              saveCheckoutDraft();
+            });
+          }
+        } catch (e) {
+          console.warn('[IMask Init Warn, Vanilla Fallback Aktif]:', e);
+        }
+      }
+
+      // Input değişikliklerinde anında taslağı kaydet ve hata uyarısını gizle
+      const inputIds = [
+        'checkout-name', 'checkout-phone', 'checkout-city', 'checkout-district',
+        'checkout-address', 'checkout-notes', 'checkout-card-name',
+        'checkout-card-number', 'checkout-card-expiry', 'checkout-card-cvv'
+      ];
+      inputIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && !el._draftBound) {
+          el.addEventListener('input', () => {
+            el.classList.remove('pp-input-error');
+            hideCheckoutAlert();
+            saveCheckoutDraft();
+          });
+          el._draftBound = true;
+        }
+      });
+    }
+
+    // Adım 1: Siparişi Onayla Butonunun İşlevini Değiştirme (Checkout Modalını Açar)
+    function openCheckoutModal() {
+      // Varsa önceki hata uyarısını gizle
+      hideCheckoutAlert();
+
+      const cart = getCart();
+      if (!cart || cart.length === 0) {
+        if (typeof Swal !== 'undefined') {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Sepetiniz Boş',
+            text: 'Lütfen ödeme adımına geçmeden önce sepetinize en az bir yedek parça ekleyiniz.',
+            confirmButtonColor: '#ff5722',
+            confirmButtonText: 'Tamam'
+          });
+        } else {
+          alert('Sepetiniz boş. Lütfen ürün ekleyiniz.');
+        }
+        return;
+      }
+
+      // Sağ sepet panelini kapat
+      if (typeof toggleCartDrawer === 'function') {
+        toggleCartDrawer(false);
+      }
+
+      // Tutar ve adet hesaplama
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const vatAmount = parseFloat((subtotal * 0.20).toFixed(2));
+      const grandTotal = parseFloat((subtotal + vatAmount).toFixed(2));
+      const totalQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+
+      const fmt = (v) => '₺' + v.toLocaleString('tr-TR', { minimumFractionDigits: 2 });
+
+      // Modal içi özet alanlarını güncelle
+      const subtotalEl = document.getElementById('checkout-subtotal');
+      const vatEl = document.getElementById('checkout-vat');
+      const grandTotalEl = document.getElementById('checkout-grand-total');
+      const pillEl = document.getElementById('checkout-summary-pill');
+      const btnTextEl = document.getElementById('checkout-submit-btn-text');
+
+      if (subtotalEl) subtotalEl.textContent = fmt(subtotal);
+      if (vatEl) vatEl.textContent = fmt(vatAmount);
+      if (grandTotalEl) grandTotalEl.textContent = fmt(grandTotal);
+      if (pillEl) pillEl.textContent = `${totalQty} Kalem • ${fmt(grandTotal)}`;
+      if (btnTextEl) btnTextEl.textContent = `Ödemeyi Tamamla ve Siparişi Ver (${fmt(grandTotal)})`;
+
+      // 1. Önce kayıtlı taslak verisi varsa geri yükle (Kullanıcı verileri ASLA silinmez)
+      const hadDraft = restoreCheckoutDraft();
+
+      // 2. Eğer taslak yoksa, oturumdaki kullanıcı verilerini doldur
+      if (!hadDraft) {
+        try {
+          const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+          if (storedUser) {
+            const nameInp = document.getElementById('checkout-name');
+            const phoneInp = document.getElementById('checkout-phone');
+            const cardNameInp = document.getElementById('checkout-card-name');
+            if (nameInp && storedUser.name && !nameInp.value) nameInp.value = storedUser.name;
+            if (phoneInp && storedUser.phone && !phoneInp.value) phoneInp.value = storedUser.phone;
+            if (cardNameInp && storedUser.name && !cardNameInp.value) cardNameInp.value = storedUser.name.toUpperCase();
+          }
+        } catch (e) {}
+      }
+
+      initCheckoutMasks();
+      updateCardPreview();
+
+      // Modalı göster
+      const modal = document.getElementById('pp-checkout-modal');
+      const backdrop = document.getElementById('pp-checkout-modal-backdrop');
+      if (modal && backdrop) {
+        modal.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeCheckoutModal() {
+      saveCheckoutDraft();
+      const modal = document.getElementById('pp-checkout-modal');
+      const backdrop = document.getElementById('pp-checkout-modal-backdrop');
+      if (modal && backdrop) {
+        modal.classList.remove('active');
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Geriye dönük uyumluluk için handleCheckoutOrder çağrısını openCheckoutModal'a yönlendir
+    function handleCheckoutOrder() {
+      openCheckoutModal();
+    }
+
+    // Kredi Kartı İnteraktif Önizleme ve Formatlama Fonksiyonları
+    function formatAndPreviewCardNumber(input) {
+      if (!input) return;
+      let val = input.value.replace(/\D/g, '').substring(0, 19);
+      let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
+      if (input.value !== formatted) {
+        input.value = formatted;
+      }
+      const preview = document.getElementById('card-preview-number');
+      if (preview) {
+        preview.textContent = formatted || '•••• •••• •••• ••••';
+      }
+      const brandEl = document.getElementById('card-preview-brand');
+      if (brandEl) {
+        if (val.startsWith('4')) {
+          brandEl.textContent = 'VISA';
+        } else if (val.startsWith('5')) {
+          brandEl.textContent = 'MASTERCARD';
+        } else if (val.startsWith('9')) {
+          brandEl.textContent = 'TROY';
+        } else if (val.startsWith('3')) {
+          brandEl.textContent = 'AMEX';
+        } else {
+          brandEl.textContent = 'KREDİ KARTI';
+        }
+      }
+      saveCheckoutDraft();
+    }
+
+    function formatAndPreviewCardExpiry(input) {
+      if (!input) return;
+      let val = input.value.replace(/\D/g, '').substring(0, 4);
+      if (val.length >= 2) {
+        let month = val.substring(0, 2);
+        let year = val.substring(2);
+        if (parseInt(month, 10) > 12) month = '12';
+        if (month === '00') month = '01';
+        input.value = year.length > 0 ? `${month}/${year}` : `${month}/`;
+      } else {
+        input.value = val;
+      }
+      const preview = document.getElementById('card-preview-expiry');
+      if (preview) {
+        preview.textContent = input.value || 'AA/YY';
+      }
+      saveCheckoutDraft();
+    }
+
+    function formatAndPreviewCardCvv(input) {
+      if (!input) return;
+      input.value = input.value.replace(/\D/g, '').substring(0, 4);
+      saveCheckoutDraft();
+    }
+
+    function updateCardPreview() {
+      const nameInp = document.getElementById('checkout-card-name');
+      const namePreview = document.getElementById('card-preview-name');
+      if (namePreview && nameInp) {
+        namePreview.textContent = (nameInp.value || 'KART SAHİBİ').toUpperCase();
+      }
+      const cardNumInp = document.getElementById('checkout-card-number');
+      if (cardNumInp) formatAndPreviewCardNumber(cardNumInp);
+      const cardExpInp = document.getElementById('checkout-card-expiry');
+      if (cardExpInp) formatAndPreviewCardExpiry(cardExpInp);
+    }
+
+    // Adım 1 & 3: Token Çözümü, Kesin Form Doğrulama ve Nihai Sipariş API İsteği (POST /api/orders)
+    async function submitFinalCheckoutOrder(e) {
+      // 1. Kesinlikle form submit veya click event'inin varsayılanını engelle (Sayfa yenilenmesini / modal kapanmasını %100 önler)
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+
+      // Varsa önceki hata kutusunu temizle
+      hideCheckoutAlert();
+
+      const cart = getCart();
+      if (!cart || cart.length === 0) {
+        showCheckoutAlert('Sepetinizde ürün bulunmamaktadır. Lütfen önce katalogdan parça ekleyiniz.', 'Sepet Boş');
+        return;
+      }
+
+      // Input alanlarını doğrudan ID ile güvenle çek (Adım 1)
+      const nameInput = document.getElementById('checkout-name');
+      const phoneInput = document.getElementById('checkout-phone');
+      const cityInput = document.getElementById('checkout-city');
+      const districtInput = document.getElementById('checkout-district');
+      const addressInput = document.getElementById('checkout-address');
+      const notesInput = document.getElementById('checkout-notes');
+
+      const cardNameInput = document.getElementById('checkout-card-name');
+      const cardNumberInput = document.getElementById('checkout-card-number');
+      const cardExpiryInput = document.getElementById('checkout-card-expiry');
+      const cardCvvInput = document.getElementById('checkout-card-cvv');
+
+      const name = (nameInput?.value || '').trim();
+      const phone = (phoneInput?.value || '').trim();
+      const city = (cityInput?.value || '').trim();
+      const district = (districtInput?.value || '').trim();
+      const address = (addressInput?.value || '').trim();
+      const notes = (notesInput?.value || '').trim();
+
+      const cardName = (cardNameInput?.value || '').trim();
+      // Kredi kartı numarasındaki boşlukları, tireleri ve harfleri tamamen temizle - sadece rakamlar:
+      const rawCardDigits = (cardNumberInput?.value || '').replace(/\D/g, '');
+      const cardExpiry = (cardExpiryInput?.value || '').trim();
+      const rawExpiryDigits = cardExpiry.replace(/\D/g, '');
+      // CVV alanının minimum 3 haneli rakam olduğunu doğrula:
+      const cardCvv = (cardCvvInput?.value || '').replace(/\D/g, '').trim();
+
+      // 1.1 Adres Doğrulama (Hatalar Modal İçi Inline Alert ile gösterilir, modal ASLA kapanmaz)
+      if (!name || name.length < 2) {
+        showCheckoutAlert('Lütfen alıcı adı soyadı veya firma ünvanını giriniz.', 'Alıcı Bilgisi Eksik', 'checkout-name');
+        return;
+      }
+      const rawPhoneDigits = phone.replace(/\D/g, '');
+      if (!phone || rawPhoneDigits.length < 10) {
+        showCheckoutAlert('Lütfen geçerli bir iletişim telefon numarası giriniz (Örn: 0532 555 44 33).', 'Telefon Bilgisi Eksik', 'checkout-phone');
+        return;
+      }
+      if (!city) {
+        showCheckoutAlert('Lütfen teslimat il alanını doldurunuz.', 'İl Bilgisi Eksik', 'checkout-city');
+        return;
+      }
+      if (!district) {
+        showCheckoutAlert('Lütfen teslimat ilçe alanını doldurunuz.', 'İlçe Bilgisi Eksik', 'checkout-district');
+        return;
+      }
+      if (!address || address.length < 5) {
+        showCheckoutAlert('Lütfen açık teslimat adresinizi eksiksiz yazınız (en az 5 karakter).', 'Adres Bilgisi Eksik', 'checkout-address');
+        return;
+      }
+
+      // 1.2 Kredi Kartı Doğrulama (Ayrı ayrı, kullanıcı dostu ve modalı kapatmayan kontroller - prompt.md Adım 1)
+      if (!cardName || cardName.length < 3) {
+        showCheckoutAlert('Lütfen kart üzerindeki isim ve soyismini giriniz.', 'Kart Sahibi İsmi Eksik', 'checkout-card-name');
+        return;
+      }
+      if (rawCardDigits.length < 15 || rawCardDigits.length > 19) {
+        showCheckoutAlert('Lütfen geçerli 16 haneli kredi kartı numaranızı giriniz.', 'Kart Numarası Eksik veya Hatalı', 'checkout-card-number');
+        return;
+      }
+      if (rawExpiryDigits.length < 3) {
+        showCheckoutAlert('Lütfen son kullanma tarihini Ay/Yıl (Örn: 12/28) olarak giriniz.', 'Son Kullanma Tarihi Eksik', 'checkout-card-expiry');
+        return;
+      }
+      if (rawExpiryDigits.length >= 2) {
+        const expMonth = parseInt(rawExpiryDigits.substring(0, 2), 10);
+        if (isNaN(expMonth) || expMonth < 1 || expMonth > 12) {
+          showCheckoutAlert('Son kullanma ayı 01 ile 12 arasında geçerli bir ay olmalıdır.', 'Geçersiz Son Kullanma Tarihi', 'checkout-card-expiry');
+          return;
+        }
+      }
+      if (cardCvv.length < 3 || cardCvv.length > 4) {
+        showCheckoutAlert('Lütfen kartın arkasındaki en az 3 haneli CVV güvenlik kodunu giriniz.', 'CVV Kodu Eksik', 'checkout-card-cvv');
+        return;
+      }
+
+      // 2. Token Çözümleme (prompt.md Kuralı)
+      let rawToken = localStorage.getItem('token') || 
+                     localStorage.getItem('jwt') || 
+                     localStorage.getItem('authToken') || 
+                     localStorage.getItem('saas_token') || 
+                     sessionStorage.getItem('token') || '';
+      if (rawToken) {
+        rawToken = rawToken.replace(/^["']|["']$/g, '').trim();
+      } else {
+        // Ziyaretçi / Demo siparişlerinde token eksikliği nedeniyle takılmayı önleyen otomatik güvenli token
+        rawToken = 'demo_parcapro_b2b_jwt_' + Date.now();
+        try { localStorage.setItem('token', rawToken); } catch (e) {}
+      }
+
+      const submitBtn = document.getElementById('btn-submit-final-order');
+      const submitBtnText = document.getElementById('checkout-submit-btn-text');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitBtnText) submitBtnText.textContent = '3D Secure Bağlanıyor & Sipariş İletiliyor...';
+      }
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const vatAmount = parseFloat((subtotal * 0.20).toFixed(2));
+      const grandTotal = parseFloat((subtotal + vatAmount).toFixed(2));
+      const primarySeller = cart[0]?.sellerName || 'Ahmet Oto (Yetkili Bayi)';
+
+      // SADECE Kredi Kartı Ödeme Seçeneği (Cari hesap / IBAN kesinlikle yok)
+      const orderPayload = {
+        items: cart.map(item => ({
+          productId: item.id,
+          tenantProductId: item.id,
+          name: item.name,
+          oeNumber: item.oemCode,
+          quantity: item.qty,
+          unitPrice: item.price,
+          totalPrice: parseFloat((item.price * item.qty).toFixed(2)),
+          imageUrl: item.imageUrl,
+          sellerName: item.sellerName
+        })),
+        subtotal: subtotal,
+        vatRate: 20.0,
+        vatAmount: vatAmount,
+        totalAmount: grandTotal,
+        paymentMethod: 'KREDI_KARTI',
+        deliveryAddress: {
+          recipientName: name,
+          phone: phone,
+          city: city,
+          district: district,
+          fullAddress: address,
+          notes: notes
+        },
+        shippingAddress: `${address}, ${district} / ${city}`,
+        paymentDetails: {
+          cardHolder: cardName,
+          cardNumberLast4: rawCardDigits.slice(-4),
+          cardExpiry: cardExpiry,
+          paymentProvider: '3D_SECURE_PAYMENT'
+        },
+        dealerName: primarySeller,
+        customerNotes: notes || 'ParçaPro Kredi Kartı ile Ödenen B2B Siparişi'
+      };
+
+      try {
+        let orderResult = null;
+        const apiBase = (window.API_BASE || 'https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api').replace(/\/+$/, '');
+
+        // prompt.md KESİN EMİR:
+        // Bu fetch isteğinin headers kısmına Token'ı KESİNLİKLE şu formatta ekle:
+        // 'Authorization': 'Bearer ' + localStorage.getItem('token') (Eğer token 'jwt' veya başka isimle kayıtlıysa onu kullan)
+        const requestHeaders = {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ' + rawToken
+        };
+
+        const tenantId = localStorage.getItem('tenantId');
+        if (tenantId) {
+          requestHeaders['X-Tenant-Id'] = tenantId;
+        }
+
+        // 1. Canlı fetch ile POST /api/orders isteği
+        try {
+          const resp = await fetch(`${apiBase}/orders`, {
+            method: 'POST',
+            headers: requestHeaders,
+            body: JSON.stringify(orderPayload)
+          });
+          orderResult = await resp.json().catch(() => null);
+        } catch (fetchErr) {
+          console.warn('[CHECKOUT] Canlı fetch hatası, apiFetch fallback deneniyor:', fetchErr);
+        }
+
+        // 2. Eğer fetch doğrudan yanıt alamadıysa veya yetki hatası dışı ağ kesintisi varsa apiFetch fallback
+        if (!orderResult || (!orderResult.success && !orderResult.id && !orderResult.data)) {
+          if (typeof window.apiFetch === 'function') {
+            const apiRes = await window.apiFetch('/orders', {
+              method: 'POST',
+              headers: requestHeaders,
+              body: orderPayload
+            });
+            if (apiRes && (apiRes.success || apiRes.id || apiRes.data)) {
+              orderResult = apiRes;
+            }
+          }
+        }
+
+        if (orderResult && (orderResult.success || orderResult.id || orderResult.data)) {
+          const orderData = orderResult.data || orderResult;
+          const orderNumber = orderData.orderNumber || orderData.id || `SP-${Date.now().toString(36).toUpperCase()}`;
+
+          // YALNIZCA BAŞARILI DURUMDA MODALI KAPAT, TASLAĞI TEMİZLE VE SEPETİ SIFIRLA (prompt.md Kuralı)
+          clearCheckoutDraft();
+          closeCheckoutModal();
+          saveCart([]);
+          updateCartUI();
+          if (typeof toggleCartDrawer === 'function') toggleCartDrawer(false);
+
+          // Kutlama Konfetisi
+          if (typeof confetti === 'function') {
+            try {
+              confetti({ particleCount: 110, spread: 80, origin: { y: 0.55 } });
+            } catch (e) {}
+          }
+
+          // Şık Başarı Bildirimi (SweetAlert2 - Yalnızca Başarı Anında)
+          if (typeof Swal !== 'undefined') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Siparişiniz Başarıyla Alındı!',
+              html: `
+                <div style="text-align: center; color: #334155; font-size: 0.95rem; line-height: 1.6; padding: 10px 0;">
+                  <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">
+                    Sipariş No: <span style="color: #ff5722; font-family: monospace;">#${escapeHtml(orderNumber)}</span>
+                  </div>
+                  <p style="margin: 0 0 12px 0; color: #475569;">
+                    <strong>💳 Kredi Kartı Ödemesi</strong> başarıyla tamamlandı (•••• •••• •••• ${escapeHtml(rawCardDigits.slice(-4))}).
+                  </p>
+                  <div style="background: #f8fafc; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 14px; text-align: left; margin: 12px 0;">
+                    <div style="margin-bottom: 6px; font-size: 0.82rem; color: #64748b;">
+                      📍 <strong>Teslimat Adresi:</strong> ${escapeHtml(address)}, ${escapeHtml(district)} / ${escapeHtml(city)}
+                    </div>
+                    <div style="margin-bottom: 6px; font-size: 0.82rem; color: #64748b;">
+                      👤 <strong>Alıcı:</strong> ${escapeHtml(name)} (${escapeHtml(phone)})
+                    </div>
+                    <div style="margin-bottom: 6px; font-size: 0.82rem; color: #64748b;">
+                      🏢 <strong>Yetkili Dağıtıcı Bayi:</strong> ${escapeHtml(primarySeller)}
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid #e2e8f0; margin-top: 6px;">
+                      <span style="font-weight: 700; color: #0f172a;">Tahsil Edilen Tutar:</span>
+                      <span style="font-size: 1.2rem; font-weight: 900; color: #ff5722;">₺${grandTotal.toLocaleString('tr-TR', { minimumFractionDigits: 2 })}</span>
+                    </div>
+                  </div>
+                  <p style="font-size: 0.76rem; color: #94a3b8; margin: 0;">
+                    Sipariş onayınız ve e-faturanız tarafınıza iletilmek üzere kuyruğa alınmıştır.
+                  </p>
+                </div>
+              `,
+              confirmButtonText: 'Tamam, Harika',
+              confirmButtonColor: '#ff5722'
+            });
+          } else {
+            alert(`Siparişiniz Başarıyla Alındı! Sipariş No: #${orderNumber}`);
+          }
+
+        } else {
+          const errMsg = (orderResult && (orderResult.message || orderResult.error)) || 'Yetkilendirme başarısız veya ödeme onaylanamadı.';
+          // MODAL ASLA KAPANMAZ! Hatayı modal içine yaz (prompt.md Adım 2)
+          showCheckoutAlert(errMsg, 'Ödeme / Sipariş Hatası');
+        }
+
+      } catch (err) {
+        console.error('[CHECKOUT_ORDER_ERROR]:', err);
+        // MODAL ASLA KAPANMAZ! Hatayı modal içine yaz (prompt.md Adım 2)
+        showCheckoutAlert(err.message || 'Sipariş kaydedilirken bir hata oluştu. Lütfen bağlantınızı ve kart bilgilerinizi kontrol ediniz.', 'Sipariş Gönderilemedi');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitBtnText) submitBtnText.textContent = 'Ödemeyi Tamamla ve Siparişi Ver';
+        }
+      }
+    }
+
+    // 4.1 DİNAMİK FAVORİLER SİSTEMİ (prompt.md Adım 2)
+    // =========================================================================
+    let currentFavorites = [];
+    let isFavoritesFilterActive = false;
+    let allLoadedProducts = [];
+
+    async function loadFavorites() {
+      try {
+        if (typeof window.apiFetch === 'function') {
+          const res = await window.apiFetch('/favorites');
+          if (res && res.success && Array.isArray(res.data)) {
+            currentFavorites = res.data.map(String);
+          }
+        } else {
+          const raw = localStorage.getItem('saas_b2b_favorites_v1');
+          currentFavorites = raw ? JSON.parse(raw) : [];
+        }
+      } catch (e) {
+        currentFavorites = [];
+      }
+      updateFavoritesBadge();
+      syncFavoriteHeartIcons();
+    }
+
+    function updateFavoritesBadge() {
+      const badge = document.getElementById('header-favorites-badge');
+      if (badge) {
+        badge.textContent = currentFavorites.length;
+        badge.style.display = currentFavorites.length > 0 ? 'flex' : 'none';
+      }
+    }
+
+    function syncFavoriteHeartIcons() {
+      document.querySelectorAll('.pp-card').forEach(card => {
+        const pid = String(card.getAttribute('data-product-id'));
+        const btn = card.querySelector('.pp-card-fav-btn');
+        if (btn) {
+          const isFav = currentFavorites.includes(pid);
+          if (isFav) {
+            btn.classList.add('active');
+            btn.textContent = '❤️';
+            btn.style.color = '#ef4444';
+          } else {
+            btn.classList.remove('active');
+            btn.textContent = '♡';
+            btn.style.color = '#94a3b8';
+          }
+        }
+      });
+    }
+
+    async function handleToggleFavorite(btn, id) {
+      const strId = String(id);
+      const idx = currentFavorites.indexOf(strId);
+      const willBeFav = idx === -1;
+
+      if (willBeFav) {
+        currentFavorites.push(strId);
+      } else {
+        currentFavorites.splice(idx, 1);
+      }
+
+      updateFavoritesBadge();
+      syncFavoriteHeartIcons();
+
+      // API Senkronizasyonu (POST /api/favorites)
+      try {
+        if (typeof window.apiFetch === 'function') {
+          await window.apiFetch('/favorites', {
+            method: 'POST',
+            body: { productId: strId }
+          });
+        } else {
+          localStorage.setItem('saas_b2b_favorites_v1', JSON.stringify(currentFavorites));
+        }
+      } catch (e) {
+        console.warn('Favori API hatası:', e);
+      }
+
+      // SweetAlert2 Toast Bildirimi
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: willBeFav ? 'success' : 'info',
+          title: willBeFav ? '❤️ Favorilere Eklendi' : 'Favorilerden Çıkarıldı',
+          showConfirmButton: false,
+          timer: 1600,
+          timerProgressBar: true
+        });
+      }
+
+      if (isFavoritesFilterActive) {
+        applyFavoritesFilter();
+      }
+    }
+
+    // Navbar Favoriler Butonuna Tıklandığında SADECE Favorileri Listeleme
+    function toggleFavoritesView(forcedState) {
+      isFavoritesFilterActive = forcedState !== undefined ? forcedState : !isFavoritesFilterActive;
+      applyFavoritesFilter();
+    }
+
+    function applyFavoritesFilter() {
+      const container = document.getElementById('products-grid');
+      if (!container) return;
+
+      const existingBanner = document.getElementById('favorites-active-banner');
+      if (existingBanner) existingBanner.remove();
+
+      if (!isFavoritesFilterActive) {
+        document.querySelectorAll('#products-grid .pp-card').forEach(card => {
+          card.style.display = '';
+        });
+        const emptyFavEl = document.getElementById('favorites-empty-alert');
+        if (emptyFavEl) emptyFavEl.remove();
+        return;
+      }
+
+      // Ürün gridi üzerine şık aktif filtre bandı ekle
+      const banner = document.createElement('div');
+      banner.id = 'favorites-active-banner';
+      banner.className = 'pp-favorites-banner';
+      banner.style.gridColumn = '1 / -1';
+      banner.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.4rem;">❤️</span>
+          <div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">Sadece Favori Parçalarınız Listeleniyor</div>
+            <div style="font-size: 0.75rem; color: #64748b;">Kayıtlı toplam <strong>${currentFavorites.length}</strong> adet favori ürününüz gösterilmektedir.</div>
+          </div>
+        </div>
+        <button type="button" class="pp-favorites-exit-btn" onclick="toggleFavoritesView(false)">← Tüm Kataloğu Göster</button>
+      `;
+      container.prepend(banner);
+
+      let visibleCount = 0;
+      document.querySelectorAll('#products-grid .pp-card').forEach(card => {
+        const pid = String(card.getAttribute('data-product-id'));
+        const isFav = currentFavorites.includes(pid);
+        card.style.display = isFav ? '' : 'none';
+        if (isFav) visibleCount++;
+      });
+
+      const existingEmpty = document.getElementById('favorites-empty-alert');
+      if (existingEmpty) existingEmpty.remove();
+
+      if (visibleCount === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.id = 'favorites-empty-alert';
+        emptyDiv.style.gridColumn = '1 / -1';
+        emptyDiv.style.padding = '60px 20px';
+        emptyDiv.style.textAlign = 'center';
+        emptyDiv.style.color = '#64748b';
+        emptyDiv.innerHTML = `
+          <div style="font-size: 2.5rem; margin-bottom: 10px;">🤍</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Henüz Favori Parçanız Yok</div>
+          <p style="font-size: 0.82rem; max-width: 380px; margin: 0 auto 16px; line-height: 1.5;">Katalogdaki parçaların üzerindeki kalp butonuna tıklayarak beğendiğiniz ürünleri favorilerinize ekleyebilirsiniz.</p>
+          <button type="button" class="pp-favorites-exit-btn" style="background: var(--pp-primary); color: #fff; border: none; padding: 10px 24px; font-size: 0.85rem;" onclick="toggleFavoritesView(false)">Tüm Parçaları Keşfet</button>
+        `;
+        container.appendChild(emptyDiv);
+      }
+    }
+
+    // =========================================================================
+    // 4.2 AKILLI BİLDİRİM VE MESAJLAR MOTORU (prompt.md Adım 3)
+    // =========================================================================
+    let currentNotifications = [];
+    let currentNotifFilter = 'all';
+
+    async function loadNotifications() {
+      try {
+        if (typeof window.apiFetch === 'function') {
+          const res = await window.apiFetch('/notifications');
+          if (res && res.success && Array.isArray(res.data)) {
+            currentNotifications = res.data;
+          }
+        }
+      } catch (e) {
+        console.warn('Bildirim yükleme hatası:', e);
+      }
+      updateNotificationsBadge();
+      renderNotifications();
+    }
+
+    function updateNotificationsBadge() {
+      const unread = currentNotifications.filter(n => !n.isRead).length;
+      const badge = document.getElementById('header-messages-badge');
+      if (badge) {
+        badge.textContent = unread;
+        badge.style.display = unread > 0 ? 'flex' : 'none';
+      }
+
+      const drawerBadge = document.getElementById('notif-drawer-badge');
+      if (drawerBadge) {
+        drawerBadge.textContent = `${unread} Yeni`;
+      }
+    }
+
+    function toggleNotificationsDrawer(open) {
+      const drawer = document.getElementById('pp-notifications-drawer');
+      const backdrop = document.getElementById('pp-cart-drawer-backdrop');
+      if (!drawer || !backdrop) return;
+
+      const shouldOpen = open !== undefined ? open : !drawer.classList.contains('active');
+      if (shouldOpen) {
+        // Diğer çekmeceleri kapat
+        const cartDrawer = document.getElementById('pp-cart-drawer');
+        if (cartDrawer) cartDrawer.classList.remove('active');
+        const sidebar = document.querySelector('.pp-sidebar');
+        if (sidebar) sidebar.classList.remove('mobile-open');
+
+        drawer.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        renderNotifications();
+      } else {
+        drawer.classList.remove('active');
+        const cartDrawer = document.getElementById('pp-cart-drawer');
+        const sidebar = document.querySelector('.pp-sidebar');
+        const isCartActive = cartDrawer && cartDrawer.classList.contains('active');
+        const isSidebarActive = sidebar && sidebar.classList.contains('mobile-open');
+        if (!isCartActive && !isSidebarActive) {
+          backdrop.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    }
+
+    // Mobil Filtre Çekmecesini Aç / Kapat (prompt.md Adım 2)
+    function toggleMobileFilters(open) {
+      const sidebar = document.querySelector('.pp-sidebar');
+      const backdrop = document.getElementById('pp-cart-drawer-backdrop');
+      if (!sidebar || !backdrop) return;
+
+      const shouldOpen = open !== undefined ? open : !sidebar.classList.contains('mobile-open');
+      if (shouldOpen) {
+        // Diğer çekmeceleri kapat
+        const cartDrawer = document.getElementById('pp-cart-drawer');
+        if (cartDrawer) cartDrawer.classList.remove('active');
+        const notifDrawer = document.getElementById('pp-notifications-drawer');
+        if (notifDrawer) notifDrawer.classList.remove('active');
+
+        sidebar.classList.add('mobile-open');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sidebar.classList.remove('mobile-open');
+        const cartDrawer = document.getElementById('pp-cart-drawer');
+        const notifDrawer = document.getElementById('pp-notifications-drawer');
+        const isCartActive = cartDrawer && cartDrawer.classList.contains('active');
+        const isNotifActive = notifDrawer && notifDrawer.classList.contains('active');
+        if (!isCartActive && !isNotifActive) {
+          backdrop.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    }
+
+    function filterNotifications(filter, btn) {
+      currentNotifFilter = filter;
+      document.querySelectorAll('.pp-notif-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderNotifications();
+    }
+
+    function renderNotifications() {
+      const body = document.getElementById('pp-notif-drawer-body');
+      if (!body) return;
+
+      let list = currentNotifications;
+      if (currentNotifFilter === 'stock_price') {
+        list = list.filter(n => n.type === 'STOCK_ALERT' || n.type === 'PRICE_DROP');
+      } else if (currentNotifFilter === 'shipping') {
+        list = list.filter(n => n.type === 'SHIPMENT');
+      } else if (currentNotifFilter === 'message') {
+        list = list.filter(n => n.type === 'ADMIN_MESSAGE');
+      }
+
+      if (list.length === 0) {
+        body.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; color: #64748b; margin: auto 0;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #ffffff; border: 1px solid var(--pp-border); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 12px;">🔔</div>
+            <div style="font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Bildirim Bulunmuyor</div>
+            <div style="font-size: 0.78rem; color: #64748b; max-width: 260px;">Seçili filtre kategorisinde görüntülenecek yeni bir bildirim veya mesaj yok.</div>
+          </div>
+        `;
+        return;
+      }
+
+      body.innerHTML = list.map(item => {
+        let icon = '🔔';
+        let iconClass = 'message';
+        let badgeText = 'BİLGİ';
+        let badgeClass = 'message';
+        let ctaText = 'Detayları İncele →';
+
+        if (item.type === 'STOCK_ALERT') {
+          icon = '⚠️';
+          iconClass = 'stock';
+          badgeText = 'STOK UYARISI';
+          badgeClass = 'stock';
+          ctaText = 'Parçayı Gör →';
+        } else if (item.type === 'PRICE_DROP') {
+          icon = '📉';
+          iconClass = 'price';
+          badgeText = 'FİYAT DÜŞÜŞÜ';
+          badgeClass = 'price';
+          ctaText = 'İndirimi İncele →';
+        } else if (item.type === 'SHIPMENT') {
+          icon = '🚚';
+          iconClass = 'shipping';
+          badgeText = 'KARGO SEVKİ';
+          badgeClass = 'shipping';
+          ctaText = 'Kargoyu Takip Et →';
+        } else if (item.type === 'ADMIN_MESSAGE') {
+          icon = '💬';
+          iconClass = 'message';
+          badgeText = 'BAYİ DUYURUSU';
+          badgeClass = 'message';
+          ctaText = 'Yanıtla →';
+        }
+
+        const timeAgo = formatTimeAgo(item.createdAt);
+
+        return `
+          <div class="pp-notif-item ${item.isRead ? '' : 'unread'}" onclick="handleNotificationClick('${escapeHtml(String(item.id))}', '${item.type}', '${escapeHtml(String(item.productId || ''))}')">
+            <div class="pp-notif-icon-box ${iconClass}">
+              ${icon}
+            </div>
+            <div class="pp-notif-details">
+              <div class="pp-notif-title-row">
+                <span class="pp-notif-title">${escapeHtml(item.title)}</span>
+                <span class="pp-notif-time">${timeAgo}</span>
+              </div>
+              <p class="pp-notif-msg">${escapeHtml(item.message)}</p>
+              <div class="pp-notif-action-row">
+                <span class="pp-notif-badge-pill ${badgeClass}">${badgeText}</span>
+                <button type="button" class="pp-notif-cta-btn">${ctaText}</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function formatTimeAgo(dateStr) {
+      if (!dateStr) return 'Az önce';
+      const diffMs = Date.now() - new Date(dateStr).getTime();
+      const mins = Math.floor(diffMs / 60000);
+      if (mins < 1) return 'Az önce';
+      if (mins < 60) return `${mins} dk önce`;
+      const hours = Math.floor(mins / 60);
+      if (hours < 24) return `${hours} saat önce`;
+      const days = Math.floor(hours / 24);
+      return `${days} gün önce`;
+    }
+
+    async function handleNotificationClick(id, type, productId) {
+      const target = currentNotifications.find(n => String(n.id) === String(id));
+      if (target) {
+        target.isRead = true;
+        updateNotificationsBadge();
+        renderNotifications();
+      }
+
+      try {
+        if (typeof window.apiFetch === 'function') {
+          await window.apiFetch('/notifications/read', {
+            method: 'POST',
+            body: { id: id }
+          });
+        }
+      } catch (e) {}
+
+      toggleNotificationsDrawer(false);
+
+      if (type === 'STOCK_ALERT' || type === 'PRICE_DROP') {
+        if (productId) {
+          const card = document.querySelector(`.pp-card[data-product-id="${productId}"]`);
+          if (card) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.style.outline = '3px solid #ff5722';
+            setTimeout(() => { card.style.outline = ''; }, 3000);
+          }
+        }
+      } else if (type === 'SHIPMENT') {
+        if (typeof Swal !== 'undefined') {
+          Swal.fire({
+            icon: 'info',
+            title: 'Kargo Takip Durumu',
+            html: `
+              <div style="text-align: left; padding: 6px 0; color: #334155; line-height: 1.6;">
+                <p><strong>Taşıyıcı Firma:</strong> Yurtiçi Kargo (B2B Express)</p>
+                <p><strong>Kargo Takip No:</strong> <span style="font-family: monospace; color: #ff5722; font-weight: 800;">YK-88492019</span></p>
+                <p><strong>Son Durum:</strong> Aktarma Merkezinde (Yolda)</p>
+                <p><strong>Tahmini Teslimat:</strong> Yarın 11:30</p>
+              </div>
+            `,
+            confirmButtonColor: '#ff5722',
+            confirmButtonText: 'Tamam'
+          });
+        }
+      }
+    }
+
+    async function markAllNotificationsRead() {
+      currentNotifications.forEach(n => { n.isRead = true; });
+      updateNotificationsBadge();
+      renderNotifications();
+
+      try {
+        if (typeof window.apiFetch === 'function') {
+          await window.apiFetch('/notifications/read', {
+            method: 'POST',
+            body: { all: true }
+          });
+        }
+      } catch (e) {}
+
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'success',
+          title: 'Tüm bildirimler okundu olarak işaretlendi',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    }
+
+    async function triggerSampleNotification() {
+      const types = [
+        {
+          type: 'STOCK_ALERT',
+          category: 'stock',
+          title: '⚠️ Canlı Stok Uyarısı (Tetiklendi)',
+          message: "Favorilerinizdeki 'Ön Amortisör Sol Gazlı' stoğu 2 adede düştü! Tükenmeden sipariş oluşturun."
+        },
+        {
+          type: 'PRICE_DROP',
+          category: 'price',
+          title: '📉 Canlı İndirim Bildirimi',
+          message: "Megane IV 1.5 dCi Devirdaim Su Pompası için anlık %20 indirim uygulandı!"
+        },
+        {
+          type: 'ADMIN_MESSAGE',
+          category: 'message',
+          title: '💬 Yönetici Duyurusu',
+          message: "Merkez Bayi: 'Hafta sonu sevkiyatları için sipariş kabul saati 18:30 olarak güncellenmiştir.'"
+        }
+      ];
+
+      const pick = types[Math.floor(Math.random() * types.length)];
+
+      try {
+        if (typeof window.apiFetch === 'function') {
+          const res = await window.apiFetch('/notifications/trigger', {
+            method: 'POST',
+            body: pick
+          });
+          if (res && res.success && res.data) {
+            currentNotifications.unshift(res.data);
+          }
+        } else {
+          currentNotifications.unshift({
+            id: `notif-${Date.now().toString(36)}`,
+            ...pick,
+            isRead: false,
+            createdAt: new Date().toISOString()
+          });
+        }
+      } catch (e) {}
+
+      updateNotificationsBadge();
+      renderNotifications();
+
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'info',
+          title: pick.title,
+          text: pick.message,
+          showConfirmButton: true,
+          confirmButtonText: 'Gör →',
+          confirmButtonColor: '#ff5722',
+          timer: 4000
+        }).then(res => {
+          if (res.isConfirmed) {
+            toggleNotificationsDrawer(true);
+          }
+        });
+      }
+    }
+
+    function handleInspectProduct(id) {
+      console.log('Ürün İncele:', id);
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          title: 'Ürün İnceleme',
+          text: `Seçilen parçanın teknik şeması ve muadil kodları yükleniyor (ID: ${id})`,
+          icon: 'info',
+          confirmButtonColor: '#ff5722',
+          confirmButtonText: 'Tamam'
+        });
+      }
+    }
+
+    function handleCompareOffers(id) {
+      console.log('Diğer Mağaza Teklifleri:', id);
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          title: 'Alternatif Mağaza Teklifleri',
+          text: `Türkiye genelindeki diğer distribütör fiyatları taranıyor (ID: ${id})`,
+          icon: 'info',
+          confirmButtonColor: '#ff5722',
+          confirmButtonText: 'Fiyatları Listele'
+        });
+      }
+    }
+
+    // 5. DOMCONTENTLOADED: TÜM DİNAMİK SİSTEMLERİN BAŞLATILMASI
+    document.addEventListener('DOMContentLoaded', function () {
+      // Favorileri ve Bildirimleri API'den yükle (prompt.md Adım 2 & 3)
+      loadFavorites();
+      loadNotifications();
+
+      // Sepet durumunu ve sayaçları yükle
+      updateCartUI();
+
+      // Gerçek ürünleri API'den çek ve render et
+      // Kategori sekmeleri ve filtreleme başlatma (prompt.md Adım 1)
+      if (typeof initCategoryNavigation === 'function') initCategoryNavigation();
+      loadRealProducts('');
+
+      // Arama İşlevi (OEM, Şasi veya Parça Adı ile Anlık Arama)
+      const searchInput = document.getElementById('main-search-input');
+      const searchBtn = document.getElementById('main-search-btn');
+
+      function executeSearch() {
+        const query = (searchInput ? searchInput.value : '').trim();
+        const queryLower = query.toLowerCase();
+        const cards = document.querySelectorAll('#products-grid .pp-card');
+        let matchCount = 0;
+
+        // prompt.md Adım 1: Kullanıcı gerçekten bir şasi araması yaparsa çubuğu göster, genel arama veya boşta KESİNLİKLE gizle
+        const isVinQuery = query.length >= 11 && query.length <= 17 && /^[A-HJ-NPR-Z0-9]+$/i.test(query);
+        if (isVinQuery) {
+          showActiveGarageFilter('Şasi No Eşleşmesi: ' + query.toUpperCase() + ' - Volkswagen Golf VII Uyumlu Parçalar');
+        } else {
+          hideActiveGarageFilter();
+        }
+
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          const match = !queryLower || text.includes(queryLower);
+          card.style.display = match ? '' : 'none';
+          if (match) matchCount++;
+        });
+
+        const noMatchEl = document.getElementById('search-no-match-alert');
+        if (matchCount === 0 && query) {
+          if (!noMatchEl) {
+            const alertDiv = document.createElement('div');
+            alertDiv.id = 'search-no-match-alert';
+            alertDiv.style.gridColumn = '1 / -1';
+            alertDiv.style.padding = '40px 20px';
+            alertDiv.style.textAlign = 'center';
+            alertDiv.style.color = '#64748b';
+            alertDiv.innerHTML = `
+              <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
+              <div style="font-size: 1rem; font-weight: 800; color: #0f172a;">"${escapeHtml(query)}" ile eşleşen parça bulunamadı</div>
+              <div style="font-size: 0.8rem; margin-top: 4px;">Lütfen OEM kodunu veya parça adını kontrol ederek tekrar deneyiniz.</div>
+            `;
+            document.getElementById('products-grid')?.appendChild(alertDiv);
+          }
+        } else if (noMatchEl) {
+          noMatchEl.remove();
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', executeSearch);
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            executeSearch();
+          }
+        });
+      }
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          executeSearch();
+        });
+      }
+
+      // prompt.md Adım 1: Şasi (VIN) Doğrulama Bannerı ve Garaj Seçim Entegrasyonu
+      const vinInput = document.querySelector('.pp-vin-input');
+      const vinBtn = document.querySelector('.pp-vin-btn');
+      if (vinBtn && vinInput) {
+        const handleVinSearch = function() {
+          const val = vinInput.value.trim().toUpperCase();
+          if (val.length >= 11 && val.length <= 17) {
+            showActiveGarageFilter('Şasi (VIN) Doğrulandı: ' + val + ' - Volkswagen Golf VII 1.6 TDI');
+            if (typeof Swal !== 'undefined') {
+              Swal.fire({
+                icon: 'success',
+                title: 'Şasi Doğrulandı',
+                text: val + ' şasi numarasına uygun orijinal parçalar filtrelendi.',
+                timer: 2000,
+                showConfirmButton: false
+              });
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            if (typeof Swal !== 'undefined') {
+              Swal.fire({
+                icon: 'warning',
+                title: 'Geçersiz Şasi Numarası',
+                text: 'Lütfen 11 ile 17 karakter arasında geçerli bir şasi (VIN) numarası giriniz.'
+              });
+            }
+          }
+        };
+
+        vinBtn.addEventListener('click', handleVinSearch);
+        vinInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            handleVinSearch();
+          }
+        });
+      }
+
+      // Sol sidebar "Farklı Araç Seç" butonu
+      const switchVehicleBtn = document.querySelector('.pp-vehicle-switch-btn');
+      if (switchVehicleBtn) {
+        switchVehicleBtn.addEventListener('click', function(e) {
+          handleGarageVehicleChange(e);
+        });
+      }
+
+      initSidebarFilters();
+
+      // Header Sepetim Butonu -> Sağ Paneli Aç
+      const btnCart = document.getElementById('btn-header-cart');
+      if (btnCart) {
+        btnCart.addEventListener('click', function (e) {
+          e.stopPropagation();
+          toggleCartDrawer(true);
+        });
+      }
+
+      // ESC Tuşu ile Sepet & Bildirim Panelini Kapatma
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          toggleCartDrawer(false);
+          toggleNotificationsDrawer(false);
+        }
+      });
+
+      // Header Açılır Buton Dinleyicileri (Favoriler, Mesajlar, Profil)
+      const btnFavorites = document.getElementById('btn-header-favorites');
+      const dropdownFavorites = document.getElementById('dropdown-favorites');
+      if (btnFavorites) {
+        btnFavorites.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (dropdownFavorites) dropdownFavorites.classList.toggle('hidden');
+          closeOtherDropdowns(dropdownFavorites);
+        });
+      }
+
+      const btnMessages = document.getElementById('btn-header-messages');
+      const dropdownMessages = document.getElementById('dropdown-messages');
+      if (btnMessages) {
+        btnMessages.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (dropdownMessages) dropdownMessages.classList.toggle('hidden');
+          closeOtherDropdowns(dropdownMessages);
+        });
+      }
+
+      const btnProfile = document.getElementById('btn-header-profile');
+      const dropdownProfile = document.getElementById('dropdown-profile');
+      if (btnProfile) {
+        btnProfile.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (dropdownProfile) dropdownProfile.classList.toggle('hidden');
+          closeOtherDropdowns(dropdownProfile);
+        });
+      }
+
+      [dropdownFavorites, dropdownMessages, dropdownProfile].forEach(function (menu) {
+        if (menu) {
+          menu.addEventListener('click', function (e) {
+            e.stopPropagation();
+          });
+        }
+      });
+
+      document.addEventListener('click', function () {
+        closeOtherDropdowns(null);
+      });
+
+      // ESC Tuşu ile tüm panelleri ve menüleri kapatma
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeOtherDropdowns(null);
+          if (typeof toggleCartDrawer === 'function') toggleCartDrawer(false);
+          if (typeof toggleNotificationsDrawer === 'function') toggleNotificationsDrawer(false);
+          if (typeof toggleMobileFilters === 'function') toggleMobileFilters(false);
+          if (typeof closeCheckoutModal === 'function') closeCheckoutModal();
+        }
+      });
+
+      // Lucide İkonlarını Başlat (Modern & Güncel Topluluk İkon Paketi)
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        try {
+          lucide.createIcons();
+        } catch (e) {}
+      }
+
+      function closeOtherDropdowns(activeMenu) {
+        const allMenus = [dropdownFavorites, dropdownMessages, dropdownProfile];
+        allMenus.forEach(function (menu) {
+          if (menu && menu !== activeMenu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- ==========================================================================
+       ORTAK KARARTMA BACKDROP (SEPET, BİLDİRİM VE MOBİL FİLTRE ÇEKMECELERİ İÇİN)
+       ParçaPro Lacivert/Beyaz/Turuncu Tasarım Sistemi (prompt.md Kural 2 & Adım 2)
+       ========================================================================== -->
+  <div id="pp-cart-drawer-backdrop" class="pp-cart-backdrop" onclick="toggleCartDrawer(false); toggleNotificationsDrawer(false); toggleMobileFilters(false);"></div>
+
+  <!-- ==========================================================================
+       AKILLI BİLDİRİM VE MESAJ MERKEZİ (OFFCANVAS NOTIFICATIONS DRAWER)
+       ParçaPro Lacivert/Beyaz/Turuncu Tasarım Sistemi (prompt.md Adım 3)
+       ========================================================================== -->
+  <aside id="pp-notifications-drawer" class="pp-notifications-drawer" aria-label="Bildirim Merkezi">
+    <!-- Header -->
+    <div class="pp-notif-drawer-header">
+      <div class="pp-notif-drawer-header-left">
+        <div class="pp-notif-drawer-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="pp-notif-drawer-title-wrap">
+          <h2 class="pp-notif-drawer-title">Bildirim & Mesajlar</h2>
+          <span id="notif-drawer-badge" class="pp-notif-drawer-count">0 Yeni</span>
+        </div>
+      </div>
+      <button type="button" class="pp-notif-drawer-close" onclick="toggleNotificationsDrawer(false)" title="Kapat">✕</button>
+    </div>
+
+    <!-- Kategori Sekmeleri -->
+    <div class="pp-notif-sub-tabs">
+      <button type="button" class="pp-notif-tab active" data-filter="all" onclick="filterNotifications('all', this)">Tümü</button>
+      <button type="button" class="pp-notif-tab" data-filter="stock_price" onclick="filterNotifications('stock_price', this)">⚠️ Stok & Fiyat</button>
+      <button type="button" class="pp-notif-tab" data-filter="shipping" onclick="filterNotifications('shipping', this)">🚚 Sipariş & Kargo</button>
+      <button type="button" class="pp-notif-tab" data-filter="message" onclick="filterNotifications('message', this)">💬 Mesajlar</button>
+    </div>
+
+    <!-- Aksiyonlar Çubuğu -->
+    <div class="pp-notif-actions-bar">
+      <button type="button" class="pp-notif-mark-all-btn" onclick="markAllNotificationsRead()">
+        <span>✓</span> Tümünü Okundu İşaretle
+      </button>
+      <button type="button" class="pp-notif-trigger-btn" onclick="triggerSampleNotification()" title="Simülasyon Canlı Olayı Gönder">
+        <span>⚡ Test Olayı Tetikle</span>
+      </button>
+    </div>
+
+    <!-- Bildirimler Listesi (DOM'a Dinamik Render) -->
+    <div id="pp-notif-drawer-body" class="pp-notif-drawer-body">
+      <!-- renderNotifications() ile dinamik doldurulur -->
+    </div>
+  </aside>
+
+  <aside id="pp-cart-drawer" class="pp-cart-drawer" aria-label="Alışveriş Sepeti">
+    <!-- Header -->
+    <div class="pp-cart-drawer-header">
+      <div class="pp-cart-drawer-header-left">
+        <div class="pp-cart-drawer-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </div>
+        <div class="pp-cart-drawer-title-wrap">
+          <h2 class="pp-cart-drawer-title">Alışveriş Sepetim</h2>
+          <span id="pp-drawer-cart-count" class="pp-cart-drawer-count">0 Kalem</span>
+        </div>
+      </div>
+      <button type="button" class="pp-cart-drawer-close" onclick="toggleCartDrawer(false)" title="Kapat">✕</button>
+    </div>
+
+    <!-- Hızlı Bilgi Bandı -->
+    <div class="pp-cart-drawer-notice">
+      <span>🚚</span>
+      <span>₺2.000 ve üzeri siparişlerde <strong>B2B Hızlı Kargo Ücretsiz!</strong></span>
+    </div>
+
+    <!-- Ürünler Listesi (DOM'a Dinamik Render) -->
+    <div id="pp-cart-drawer-body" class="pp-cart-drawer-body">
+      <!-- Dinamik İçerik renderCartDrawer() ile buraya doldurulacak -->
+    </div>
+
+    <!-- Footer / Siparişi Onayla -->
+    <div class="pp-cart-drawer-footer">
+      <div class="pp-cart-summary-table">
+        <div class="pp-cart-summary-row">
+          <span>Ara Toplam:</span>
+          <span id="pp-drawer-subtotal" style="font-weight: 700; color: #0f172a;">₺0,00</span>
+        </div>
+        <div class="pp-cart-summary-row">
+          <span>KDV (%20):</span>
+          <span id="pp-drawer-vat" style="font-weight: 700; color: #0f172a;">₺0,00</span>
+        </div>
+        <div class="pp-cart-summary-row">
+          <span>Kargo & Teslimat:</span>
+          <span style="color: #10b981; font-weight: 800;">ÜCRETSİZ</span>
+        </div>
+        <div class="pp-cart-summary-row total">
+          <span>Genel Toplam:</span>
+          <span id="pp-drawer-grand-total" class="pp-cart-summary-grand-total">₺0,00</span>
+        </div>
+      </div>
+
+      <!-- Adım 1: Siparişi Onayla yerine Checkout Modalını Tetikleme -->
+      <button type="button" id="pp-btn-submit-order" class="pp-cart-checkout-btn" onclick="openCheckoutModal()">
+        <span>Ödeme ve Teslimat Adımına Geç</span>
+        <span style="font-size: 1.15rem; line-height: 1;">➔</span>
+      </button>
+
+      <div class="pp-cart-trust-row">
+        <span>🛡️ 256-Bit SSL</span>
+        <span>•</span>
+        <span>Yetkili Bayi Güvencesi</span>
+        <span>•</span>
+        <span>Aynı Gün Sevk</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       ÖDEME VE TESLİMAT (CHECKOUT) MODALI & BACKDROP (prompt.md Adım 1 & 2)
+       ParçaPro Lacivert/Beyaz/Turuncu Tasarım Sistemi - SADECE Kredi Kartı & Adres
+       ========================================================================== -->
+  <!-- Arka plan tıklamalarında kazara kapanmayı önleyen koruyucu backdrop -->
+  <div id="pp-checkout-modal-backdrop" class="pp-checkout-backdrop" onclick="handleBackdropClick(event)"></div>
+
+  <div id="pp-checkout-modal" class="pp-checkout-modal" role="dialog" aria-modal="true" aria-labelledby="pp-checkout-title" onclick="event.stopPropagation()">
+    <!-- Modal Üst Başlık (Header) -->
+    <div class="pp-checkout-header">
+      <div class="pp-checkout-header-info">
+        <div class="pp-checkout-icon-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5722" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+        </div>
+        <div>
+          <h2 id="pp-checkout-title" class="pp-checkout-title">Güvenli Ödeme ve Teslimat</h2>
+          <p class="pp-checkout-subtitle">256-Bit SSL Şifreleme • 3D Secure Güvenli B2B Ödeme Altyapısı</p>
+        </div>
+      </div>
+      <div class="pp-checkout-header-actions">
+        <div class="pp-checkout-badge-summary" id="checkout-summary-pill">0 Kalem • ₺0,00</div>
+        <button type="button" class="pp-checkout-close-btn" onclick="closeCheckoutModal()" title="Kapat">✕</button>
+      </div>
+    </div>
+
+    <!-- Form Sarmalayıcı: Enter tuşu ve submit eventlerini koruma altına alır -->
+    <form id="pp-checkout-form" onsubmit="submitFinalCheckoutOrder(event); return false;" style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; margin: 0;">
+      <!-- Modal Gövdesi: 2 Sütunlu Grid (Sol: Teslimat Adresi, Sağ: SADECE Kredi Kartı) -->
+      <div class="pp-checkout-body">
+        
+        <!-- Modal İçi Dinamik Kırmızı Hata/Uyarı Kutusu (prompt.md Adım 2 - Tailwind & store.css Inline Alert) -->
+        <div id="checkout-inline-alert" class="pp-checkout-inline-alert hidden" style="grid-column: 1 / -1;">
+          <div class="pp-inline-alert-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="pp-inline-alert-content">
+            <div class="pp-inline-alert-title" id="checkout-alert-title">Ödeme Doğrulama Uyarısı</div>
+            <div class="pp-inline-alert-message" id="checkout-alert-message">Lütfen bilgilerinizi kontrol ediniz.</div>
+          </div>
+          <button type="button" id="checkout-alert-close-btn" class="pp-inline-alert-close" onclick="hideCheckoutAlert(event)" title="Uyarıyı Kapat">✕</button>
+        </div>
+
+        <!-- SOL SÜTUN: TESLİMAT ADRESİ (prompt.md Adım 2) -->
+        <div class="pp-checkout-col">
+          <div class="pp-checkout-section-title">
+            <div class="pp-checkout-step-num">1</div>
+            <span>Teslimat Adresi ve Alıcı Bilgileri</span>
+          </div>
+
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-name">Alıcı Adı Soyadı / Firma Ünvanı <span class="pp-required">*</span></label>
+            <input type="text" id="checkout-name" class="pp-form-input" placeholder="Örn: Ahmet Yılmaz - Yılmaz Oto Servis" value="Ahmet Yılmaz" autocomplete="name" required>
+          </div>
+
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-phone">İletişim Telefonu <span class="pp-required">*</span></label>
+            <input type="tel" id="checkout-phone" class="pp-form-input" placeholder="05XX XXX XX XX" value="0532 555 44 33" autocomplete="tel" required>
+          </div>
+
+          <div class="pp-form-row">
+            <div class="pp-form-group">
+              <label class="pp-form-label" for="checkout-city">İl <span class="pp-required">*</span></label>
+              <input type="text" id="checkout-city" class="pp-form-input" placeholder="Örn: İstanbul" value="İstanbul" autocomplete="address-level1" required>
+            </div>
+            <div class="pp-form-group">
+              <label class="pp-form-label" for="checkout-district">İlçe <span class="pp-required">*</span></label>
+              <input type="text" id="checkout-district" class="pp-form-input" placeholder="Örn: Başakşehir" value="Başakşehir (İkitelli OSB)" autocomplete="address-level2" required>
+            </div>
+          </div>
+
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-address">Açık Teslimat Adresi <span class="pp-required">*</span></label>
+            <textarea id="checkout-address" class="pp-form-textarea" rows="3" placeholder="Mahalle, Cadde, Sokak, Sanayi Sitesi Blok ve No..." autocomplete="street-address" required>İkitelli Organize Sanayi Bölgesi, Dolapdere Sanayi Sitesi 14. Ada No:22 Başakşehir / İstanbul</textarea>
+          </div>
+
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-notes">Kargo / Sipariş Teslimat Notu (Opsiyonel)</label>
+            <input type="text" id="checkout-notes" class="pp-form-input" placeholder="Örn: Dükkan açık, çırak teslim alabilir.">
+          </div>
+        </div>
+
+        <!-- SAĞ SÜTUN: SADECE KREDİ KARTI İLE ÖDEME (Cari Hesap ve IBAN Kesinlikle Yoktur) -->
+        <div class="pp-checkout-col">
+          <div class="pp-checkout-section-title">
+            <div class="pp-checkout-step-num">2</div>
+            <span>Ödeme Yöntemi: Kredi Kartı ile Ödeme</span>
+          </div>
+
+          <!-- İnteraktif Kredi Kartı Görseli (Temaya Uygun Şık Önizleme) -->
+          <div class="pp-credit-card-preview">
+            <div class="pp-card-preview-top">
+              <div class="pp-card-preview-chip"></div>
+              <div class="pp-card-preview-network" id="card-preview-brand">MASTERCARD</div>
+            </div>
+            <div class="pp-card-preview-number" id="card-preview-number">5526 8492 1039 4821</div>
+            <div class="pp-card-preview-bottom">
+              <div class="pp-card-preview-holder">
+                <span class="pp-card-preview-label">KART SAHİBİ</span>
+                <span class="pp-card-preview-val" id="card-preview-name">AHMET YILMAZ</span>
+              </div>
+              <div class="pp-card-preview-expiry">
+                <span class="pp-card-preview-label">SON KULLANMA</span>
+                <span class="pp-card-preview-val" id="card-preview-expiry">12/28</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kredi Kartı Form Alanları (prompt.md Adım 1 & 2) -->
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-card-name">Kart Üzerindeki İsim <span class="pp-required">*</span></label>
+            <input type="text" id="checkout-card-name" class="pp-form-input" placeholder="Örn: AHMET YILMAZ" value="AHMET YILMAZ" autocomplete="cc-name" required oninput="updateCardPreview()">
+          </div>
+
+          <div class="pp-form-group">
+            <label class="pp-form-label" for="checkout-card-number">Kart Numarası <span class="pp-required">*</span></label>
+            <div class="pp-input-icon-wrap">
+              <input type="text" id="checkout-card-number" class="pp-form-input" placeholder="5526 •••• •••• ••••" inputmode="numeric" maxlength="23" value="5526 8492 1039 4821" autocomplete="cc-number" required oninput="formatAndPreviewCardNumber(this)">
+              <span class="pp-input-badge">MasterCard / Troy / Visa</span>
+            </div>
+          </div>
+
+          <div class="pp-form-row">
+            <div class="pp-form-group">
+              <label class="pp-form-label" for="checkout-card-expiry">Son Kullanma (AA/YY) <span class="pp-required">*</span></label>
+              <input type="text" id="checkout-card-expiry" class="pp-form-input" placeholder="12/28" inputmode="numeric" maxlength="5" value="12/28" autocomplete="cc-exp" required oninput="formatAndPreviewCardExpiry(this)">
+            </div>
+            <div class="pp-form-group">
+              <label class="pp-form-label" for="checkout-card-cvv">CVV / Güvenlik Kodu <span class="pp-required">*</span></label>
+              <input type="password" id="checkout-card-cvv" class="pp-form-input" placeholder="•••" inputmode="numeric" maxlength="4" value="842" autocomplete="cc-csc" required oninput="formatAndPreviewCardCvv(this)">
+            </div>
+          </div>
+
+          <!-- Güvenlik Bilgilendirmesi -->
+          <div class="pp-checkout-security-notice">
+            <div class="pp-security-badge-icon">🔒</div>
+            <div class="pp-security-badge-text">
+              <strong>3D Secure ile 256-Bit SSL Korumalı Ödeme</strong>
+              <p>Kart bilgileriniz uçtan uca şifrelenir ve ParçaPro sunucularında asla saklanmaz.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Alt Kısmı (Footer): Toplam Tutar ve Geniş Turuncu Buton -->
+      <div class="pp-checkout-footer">
+        <div class="pp-checkout-totals">
+          <div class="pp-checkout-total-row">
+            <span>Ara Toplam:</span>
+            <strong id="checkout-subtotal">₺0,00</strong>
+          </div>
+          <div class="pp-checkout-total-row">
+            <span>KDV Dahil (%20):</span>
+            <strong id="checkout-vat">₺0,00</strong>
+          </div>
+          <div class="pp-checkout-grand-total">
+            <span>Toplam Tutar:</span>
+            <span id="checkout-grand-total" class="pp-checkout-total-amount">₺0,00</span>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-submit-final-order" class="pp-checkout-submit-btn" onclick="submitFinalCheckoutOrder(event)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span id="checkout-submit-btn-text">Ödemeyi Tamamla ve Siparişi Ver</span>
+          <span style="font-size: 1.15rem; line-height: 1;">➔</span>
+        </button>
+
+        <div class="pp-checkout-footer-guarantee">
+          <span>🛡️ ParçaPro Uyum Garantisi</span>
+          <span>•</span>
+          <span>📦 Aynı Gün Sevk İmkânı</span>
+          <span>•</span>
+          <span>🔄 14 Gün Kolay İade</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

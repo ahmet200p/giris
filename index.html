@@ -831,12 +831,6 @@
        (Prompt Kural 1, 2, 3 - SweetAlert2 & Modern Community Standards)
        ======================================================================== -->
   <script>
-    // prompt.md ADIM 1: API BASE URL'NİN KESİN TANIMLANMASI VE KULLANIMI
-    // Canlı backend adresi (Not: Sonunda /api yoktur).
-    const API_BASE_URL = "https://saas-g-ncel-10-10-2026simdi-main.onrender.com";
-    window.API_BASE_URL = API_BASE_URL;
-    window.API_BASE = `${API_BASE_URL}/api`;
-
     // 0. XSS Koruması ve Kaçırma Fonksiyonu
     function escapeHtml(str) {
       if (str === null || str === undefined) return '';
@@ -1054,6 +1048,9 @@
       // 3. Ürünleri Dinamik Olarak Getir (Filtresiz veya İlgili Kategori ile)
       buildAndFetchFilters();
     }
+    // ADIM 2: Global scope'a bağla (onclick erişimi için)
+    window.selectCategory = selectCategory;
+    window.applyCategoryFilter = selectCategory;
 
     
     // =========================================================================
@@ -1626,9 +1623,11 @@
 
       // B) İkincil Yol: Doğrudan Backend Fetch İstekleri (prompt.md Adım 2 - Mutlak URL)
       if (!products || products.length === 0) {
+        const base = (typeof API_BASE_URL !== 'undefined' ? API_BASE_URL : (window.API_BASE_URL || "https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api")).replace(/\/+$/, '');
+        const cleanBase = base.endsWith('/api') ? base : `${base}/api`;
         const endpoints = [
-          `${API_BASE_URL}/api/products${queryString}`,
-          `${API_BASE_URL}/api/store/products${queryString}`
+          `${cleanBase}/products${queryString}`,
+          `${cleanBase}/store/products${queryString}`
         ];
 
         for (const ep of endpoints) {
@@ -2493,10 +2492,13 @@
           requestHeaders['X-Tenant-Slug'] = tenantId;
         }
 
-        // 1. Canlı fetch ile POST ${API_BASE_URL}/api/store/orders isteği
+        // 1. Canlı fetch ile POST ${cleanBase}/store/orders isteği
+        const base = (typeof API_BASE_URL !== 'undefined' ? API_BASE_URL : (window.API_BASE_URL || "https://saas-g-ncel-10-10-2026simdi-main.onrender.com/api")).replace(/\/+$/, '');
+        const cleanBase = base.endsWith('/api') ? base : `${base}/api`;
+
         try {
-          console.log('[Checkout Fetch] İstek atılıyor:', `${API_BASE_URL}/api/store/orders`);
-          const resp = await fetch(`${API_BASE_URL}/api/store/orders`, {
+          console.log('[Checkout Fetch] İstek atılıyor:', `${cleanBase}/store/orders`);
+          const resp = await fetch(`${cleanBase}/store/orders`, {
             method: 'POST',
             headers: requestHeaders,
             body: JSON.stringify(orderPayload)
@@ -2506,11 +2508,11 @@
           console.warn('[CHECKOUT] POST /api/store/orders hatası, fallback deneniyor:', fetchErr);
         }
 
-        // Fallback: POST ${API_BASE_URL}/api/orders
+        // Fallback: POST ${cleanBase}/orders
         if (!orderResult || (!orderResult.success && !orderResult.id && !orderResult.data)) {
           try {
-            console.log('[Checkout Fetch] Fallback isteği atılıyor:', `${API_BASE_URL}/api/orders`);
-            const resp2 = await fetch(`${API_BASE_URL}/api/orders`, {
+            console.log('[Checkout Fetch] Fallback isteği atılıyor:', `${cleanBase}/orders`);
+            const resp2 = await fetch(`${cleanBase}/orders`, {
               method: 'POST',
               headers: requestHeaders,
               body: JSON.stringify(orderPayload)
